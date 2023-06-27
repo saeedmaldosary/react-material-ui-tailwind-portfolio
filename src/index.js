@@ -1,8 +1,8 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import { createTheme, ThemeProvider } from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import "aos/dist/aos.css";
 import "remixicon/fonts/remixicon.css";
@@ -10,25 +10,21 @@ import "remixicon/fonts/remixicon.css";
 const theme = createTheme({
   palette: {
     primary: {
-      light: "#757ce8",
-      main: "#3f50b5",
-      dark: "#002884",
-      contrastText: "#fff",
+      main: "#ffffff",
+      contrastText: "#ff05cd",
     },
     secondary: {
-      light: "#ff7961",
-      main: "#ffff",
-      dark: "#ba000d",
-      contrastText: "#3f50b5",
+      main: "#8873ef",
+      contrastText: "#564899",
     },
   },
 });
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
+ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <App />
     </ThemeProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById("root")
 );

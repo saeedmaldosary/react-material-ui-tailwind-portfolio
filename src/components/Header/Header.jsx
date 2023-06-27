@@ -12,8 +12,7 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import ArrowCircleDownIcon from "@mui/icons-material/ArrowCircleDown";
 
-const pages = ["Products", "Pricing", "Blog"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const pages = ["About", "Skills", "Certifications", "Contact"];
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -35,7 +34,13 @@ function Header() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar
+      sx={{
+        boxShadow: "none",
+      }}
+      color="primary"
+      position="static"
+    >
       <Container>
         <Toolbar disableGutters>
           {/* Logo */}
@@ -47,7 +52,6 @@ function Header() {
           >
             <Button
               variant="contained"
-              color="primary"
               sx={{
                 borderRadius: "50%",
                 minWidth: 0,
@@ -66,7 +70,6 @@ function Header() {
                   variant="body1"
                   component="span"
                   sx={{
-                    color: "text.secondary",
                     fontWeight: "bold",
                   }}
                 >
@@ -89,7 +92,11 @@ function Header() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{
+                  my: 2,
+                  color: "secondary.contrastText",
+                  display: "block",
+                }}
               >
                 {page}
               </Button>
@@ -116,7 +123,7 @@ function Header() {
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               sx={{ p: 0, pl: 1 }}
-              color="inherit"
+              color="secondary"
             >
               <MenuIcon />
             </IconButton>
