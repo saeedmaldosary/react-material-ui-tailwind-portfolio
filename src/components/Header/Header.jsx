@@ -1,87 +1,153 @@
-import React from "react";
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import Menu from "@mui/material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
+import Container from "@mui/material/Container";
+import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+import MenuItem from "@mui/material/MenuItem";
+import ArrowCircleDownIcon from "@mui/icons-material/ArrowCircleDown";
 
-const Header = () => {
+const pages = ["Products", "Pricing", "Blog"];
+const settings = ["Profile", "Account", "Dashboard", "Logout"];
+
+function Header() {
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
+
   return (
-    <header className="w-full h-[80px] flex items-center leading-[80px]">
-      {/* Container start */}
-      <div className="container">
-        <div className="flex items-center justify-between">
-          {/* Logo start */}
-          <div className="flex items-center gap-[10px]">
-            {/* Circle start  */}
-            <span
-              className="w-[35px] h-[35px] bg-primaryCoIor
-              text-white text-[18px] font-[500] rounded-full 
-              flex items-center justify-center
-            "
+    <AppBar position="static">
+      <Container>
+        <Toolbar disableGutters>
+          {/* Logo */}
+          <Box
+            sx={{
+              display: "flex",
+              flexGrow: { xs: 1, md: 0 },
+            }}
+          >
+            <Button
+              variant="contained"
+              color="primary"
+              sx={{
+                borderRadius: "50%",
+                minWidth: 0,
+                padding: 0,
+                boxShadow: "none",
+              }}
             >
-              S
-            </span>
-            {/* Circle end  */}
-            {/* Name based the circle start */}
-            <div className="leading-[20px]">
-              <h2 className="text-xl text-smallTextColor font-[700]">Saeed</h2>
-              <p className="text-smallTextColor text-[16px] font-[500]">
-                Personal
-              </p>
-            </div>
-            {/* Name based the circle end */}
-          </div>
-          {/* Logo end */}
-          {/* Menu start */}
-          <div className="menu">
-            <ul className="flex gap-10">
-              <li>
-                <a className="text-smallTextColor font-[600]" href="#about">
-                  About
-                </a>
-              </li>
-              <li>
-                <a className="text-smallTextColor font-[600]" href="services">
-                  Services
-                </a>
-              </li>
-              <li>
-                <a className="text-smallTextColor font-[600]" href="portfolio">
-                  Portfolio
-                </a>
-              </li>
-              <li>
-                <a className="text-smallTextColor font-[600]" href="contact">
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </div>
-          {/* Menu end */}
-          {/* Menu right start */}
-          <div className="flex items-center gap-4">
-            {/* Let's Talk button start */}
-            <button
-              className="flex items-center gap-2
-              text-smallTextColor font-[600]
-              border border-solid border-smallTextColor
-              py-2 px-4 rounded-[8px]
-              max-h-[40px]
-              hover:bg-smallTextColor hover:text-white
-              ease-in duration-300"
-            >
-              <i class="ri-send-plane-line"></i>
-              Let's Talk
-            </button>
-            {/* Let's Talk button end */}
-            {/* Small menu start */}
-            <span className="text-2xl text-smallTextColor md:hidden cursor-pointer">
-              <i class="ri-menu-line"></i>
-            </span>
-            {/* Small menu end */}
-          </div>
-          {/* Menu right end */}
-        </div>
-      </div>
-      {/* Container end */}
-    </header>
-  );
-};
+              <Avatar
+                sx={{
+                  width: 40,
+                  height: 40,
+                  backgroundColor: "secondary.main",
+                }}
+              >
+                <Typography
+                  variant="body1"
+                  component="span"
+                  sx={{
+                    color: "text.secondary",
+                    fontWeight: "bold",
+                  }}
+                >
+                  S
+                </Typography>
+              </Avatar>
+            </Button>
+          </Box>
 
+          {/* Big screen screen menu */}
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", md: "flex" },
+              justifyContent: "center",
+              gap: 3,
+            }}
+          >
+            {pages.map((page) => (
+              <Button
+                key={page}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "white", display: "block" }}
+              >
+                {page}
+              </Button>
+            ))}
+          </Box>
+
+          {/* Hire me button */}
+          <Box>
+            <Button
+              variant="outlined"
+              color="secondary"
+              startIcon={<ArrowCircleDownIcon />}
+            >
+              Hire me
+            </Button>
+          </Box>
+
+          {/* Small screen menu */}
+          <Box sx={{ display: { xs: "flex", md: "none" } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              sx={{ p: 0, pl: 1 }}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "left",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: "block", md: "none" },
+              }}
+            >
+              {pages.map((page) => (
+                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">{page}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
+        </Toolbar>
+      </Container>
+    </AppBar>
+  );
+}
 export default Header;
