@@ -33,7 +33,7 @@ const Hero = () => {
             <Typography
               sx={{
                 fontWeight: "bold",
-                mb: 4,
+                mb: 3,
                 fontSize: { xs: "28px", md: "32px" },
               }}
               variant="body1"
@@ -43,7 +43,7 @@ const Hero = () => {
             <Button
               color="secondary"
               sx={{
-                mb: 4,
+                mb: 3,
                 boxShadow: 0,
                 color: "#ffff",
                 textTransform: "capitalize",
