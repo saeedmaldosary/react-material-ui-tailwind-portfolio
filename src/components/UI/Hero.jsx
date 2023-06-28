@@ -14,7 +14,7 @@ const Hero = () => {
 
   return (
     <Container className="mt-10">
-      <Grid container spacing={2}>
+      <Grid container>
         <Grid item md={8} xs={12}>
           <div>
             <Typography sx={{ mb: 2, fontSize: { xs: "22px", md: "24px" } }}>
