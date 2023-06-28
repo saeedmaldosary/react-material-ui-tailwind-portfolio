@@ -96,6 +96,7 @@ function Header() {
                   my: 2,
                   color: "secondary.contrastText",
                   display: "block",
+                  fontWeight: "bold",
                 }}
               >
                 {page}
