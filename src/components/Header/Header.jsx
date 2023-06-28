@@ -10,7 +10,7 @@ import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import ArrowCircleDownIcon from "@mui/icons-material/ArrowCircleDown";
+import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 
 const pages = ["About", "Skills", "Certifications", "Contact"];
 
@@ -113,9 +113,9 @@ function Header() {
               variant="outlined"
               color="secondary"
               sx={{ textTransform: "capitalize" }}
-              startIcon={<ArrowCircleDownIcon />}
+              startIcon={<ChatOutlinedIcon />}
             >
-              Hire me
+              Let's Talk
             </Button>
           </Box>
 

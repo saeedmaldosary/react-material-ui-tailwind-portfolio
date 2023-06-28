@@ -10,7 +10,6 @@ import ArrowCircleDownIcon from "@mui/icons-material/ArrowCircleDown";
 
 const Hero = () => {
   const theme = useTheme();
-  const isMdScreen = useMediaQuery(theme.breakpoints.up("md"));
 
   return (
     <Container className="mt-10">
@@ -53,11 +52,11 @@ const Hero = () => {
             >
               Resume
             </Button>
-            <Typography sx={{ mb: 4, ml: 4, mr: 4 }} variant="body1">
+            <Typography sx={{ mb: 4, ml: 4, maxWidth: 500 }} variant="body1">
               Application developer in-depth knowledge of software application
               development as well as proficiency in providing solutions.
             </Typography>
-            <Typography variant="body1" gutterBottom>
+            <Typography sx={{ mb: 4 }} variant="body1" gutterBottom>
               Follow me:
               <a
                 href="https://github.com/saeedmaldosary"
