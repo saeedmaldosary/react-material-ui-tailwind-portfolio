@@ -37,6 +37,7 @@ function Header() {
     <AppBar
       sx={{
         boxShadow: "none",
+        mt: 1,
       }}
       color="primary"
       position="static"
@@ -71,6 +72,7 @@ function Header() {
                   component="span"
                   sx={{
                     fontWeight: "bold",
+                    color: "#ffff",
                   }}
                 >
                   S
@@ -96,7 +98,7 @@ function Header() {
                   my: 2,
                   color: "secondary.contrastText",
                   display: "block",
-                  fontWeight: 550,
+                  fontWeight: 600,
                   textTransform: "capitalize",
                 }}
               >

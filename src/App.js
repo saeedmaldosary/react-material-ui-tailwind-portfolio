@@ -1,5 +1,5 @@
 import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
+// import Footer from "./components/Footer/Footer";
 import Hero from "./components/UI/Hero";
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
     <>
       <Header />
       <Hero />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

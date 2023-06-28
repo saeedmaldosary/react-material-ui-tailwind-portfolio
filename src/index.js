@@ -12,6 +12,7 @@ const theme = createTheme({
   typography: {
     allVariants: {
       fontFamily: "Urbanist",
+      color: "#193256",
     },
   },
   palette: {

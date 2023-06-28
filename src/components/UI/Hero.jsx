@@ -17,7 +17,7 @@ const Hero = () => {
       <Grid container spacing={2}>
         <Grid item md={8} xs={12}>
           <div>
-            <Typography sx={{ mb: 2 }} variant={isMdScreen ? "h6" : "body1"}>
+            <Typography sx={{ mb: 2, fontSize: { xs: "22px", md: "24px" } }}>
               Hello,
             </Typography>
             <Typography
@@ -60,7 +60,7 @@ const Hero = () => {
             <Typography variant="body1" gutterBottom>
               Follow me:
               <a
-                href="https://github.com/your-username"
+                href="https://github.com/saeedmaldosary"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ textDecoration: "none", color: "inherit" }}
@@ -75,7 +75,7 @@ const Hero = () => {
                 />
               </a>
               <a
-                href="https://linkedin.com/in/your-username"
+                href="https://linkedin.com/in/smaldosary"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ textDecoration: "none", color: "inherit" }}
