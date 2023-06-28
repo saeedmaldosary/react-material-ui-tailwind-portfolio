@@ -22,7 +22,7 @@ const Hero = () => {
               variant={isMdScreen ? "h6" : "body1"}
               gutterBottom
             >
-              Hello Welcome,
+              Hello,
             </Typography>
             <Typography
               sx={{
@@ -44,11 +44,16 @@ const Hero = () => {
               variant="body1"
               gutterBottom
             >
-              Software Engineer
+              Software Engineer 👨‍💻
             </Typography>
             <Button
               color="secondary"
-              sx={{ mb: 4, boxShadow: 0, color: "#ffff" }}
+              sx={{
+                mb: 4,
+                boxShadow: 0,
+                color: "#ffff",
+                textTransform: "capitalize",
+              }}
               variant="contained"
               startIcon={<ArrowCircleDownIcon />}
             >

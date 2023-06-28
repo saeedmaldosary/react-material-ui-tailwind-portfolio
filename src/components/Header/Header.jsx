@@ -96,7 +96,8 @@ function Header() {
                   my: 2,
                   color: "secondary.contrastText",
                   display: "block",
-                  fontWeight: "bold",
+                  fontWeight: 550,
+                  textTransform: "capitalize",
                 }}
               >
                 {page}
@@ -109,6 +110,7 @@ function Header() {
             <Button
               variant="outlined"
               color="secondary"
+              sx={{ textTransform: "capitalize" }}
               startIcon={<ArrowCircleDownIcon />}
             >
               Hire me
