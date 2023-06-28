@@ -17,11 +17,7 @@ const Hero = () => {
       <Grid container spacing={2}>
         <Grid item md={8} xs={12}>
           <div>
-            <Typography
-              sx={{ mb: 2 }}
-              variant={isMdScreen ? "h6" : "body1"}
-              gutterBottom
-            >
+            <Typography sx={{ mb: 2 }} variant={isMdScreen ? "h6" : "body1"}>
               Hello,
             </Typography>
             <Typography
@@ -31,7 +27,6 @@ const Hero = () => {
                 fontSize: { xs: "28px", md: "32px" },
               }}
               variant="body1"
-              gutterBottom
             >
               I'm Saeed Aldosary
             </Typography>
@@ -42,7 +37,6 @@ const Hero = () => {
                 fontSize: { xs: "28px", md: "32px" },
               }}
               variant="body1"
-              gutterBottom
             >
               Software Engineer 👨‍💻
             </Typography>
@@ -59,11 +53,7 @@ const Hero = () => {
             >
               Resume
             </Button>
-            <Typography
-              sx={{ mb: 4, ml: 4, mr: 4 }}
-              variant="body1"
-              gutterBottom
-            >
+            <Typography sx={{ mb: 4, ml: 4, mr: 4 }} variant="body1">
               Application developer in-depth knowledge of software application
               development as well as proficiency in providing solutions.
             </Typography>
