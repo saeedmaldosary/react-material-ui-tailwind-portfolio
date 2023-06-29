@@ -63,7 +63,7 @@ const Skills = () => {
               <img
                 src={skill.image}
                 alt={skill.name}
-                style={{ width: "60px" }}
+                style={{ width: "40px" }}
               />
             </Card>
           </Grid>
