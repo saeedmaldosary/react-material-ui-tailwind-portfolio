@@ -12,7 +12,7 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 
-const pages = ["About", "Skills", "Certifications", "Contact"];
+const pages = ["About", "Skills", "Certifications"];
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -53,6 +53,7 @@ function Header() {
           >
             <Button
               variant="contained"
+              disableElevation
               sx={{
                 borderRadius: "50%",
                 minWidth: 0,

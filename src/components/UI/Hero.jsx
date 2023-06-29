@@ -14,7 +14,7 @@ const Hero = () => {
   return (
     <Container className="mt-10">
       <Grid container>
-        <Grid item md={8} xs={12}>
+        <Grid item md={8} sm={8} xs={12}>
           <div>
             <Typography sx={{ mb: 2, fontSize: { xs: "22px", md: "24px" } }}>
               Hello,
@@ -40,6 +40,7 @@ const Hero = () => {
               Software Engineer 👨‍💻
             </Typography>
             <Button
+              disableElevation
               color="secondary"
               sx={{
                 mb: 3,
@@ -52,7 +53,10 @@ const Hero = () => {
             >
               Resume
             </Button>
-            <Typography sx={{ mb: 4, ml: 4, maxWidth: 500 }} variant="body1">
+            <Typography
+              sx={{ mb: 4, ml: 4, maxWidth: { md: 500, sm: 400 } }}
+              variant="body1"
+            >
               Application developer in-depth knowledge of software application
               development as well as proficiency in providing solutions.
             </Typography>
@@ -90,7 +94,7 @@ const Hero = () => {
             </Typography>
           </div>
         </Grid>
-        <Grid item md={4} xs={12}>
+        <Grid item md={4} sm={4} xs={12}>
           <div
             style={{
               backgroundColor: theme.palette.secondary.main,
