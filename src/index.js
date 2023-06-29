@@ -15,10 +15,26 @@ const theme = createTheme({
       color: "#193256",
     },
   },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          "&:hover": {
+            backgroundColor: "#564899",
+            color: "#ffff",
+          },
+        },
+      },
+    },
+  },
   palette: {
+    action: {
+      disabledBackground: "#564899",
+      disabled: "#ffff",
+    },
     primary: {
       main: "#ffffff",
-      contrastText: "#ff05cd",
+      contrastText: "#8873ef",
     },
     secondary: {
       main: "#8873ef",
