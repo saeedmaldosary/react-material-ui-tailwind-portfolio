@@ -70,9 +70,9 @@ function Header() {
                 <Typography
                   variant="body1"
                   component="span"
+                  color="primary"
                   sx={{
                     fontWeight: "bold",
-                    color: "#ffff",
                   }}
                 >
                   S
