@@ -64,7 +64,7 @@ const LetsTalk = () => {
           sm={7}
           xs={12}
         >
-          <Box sx={{ ml: { xs: 0, md: 4 } }}>
+          <Box sx={{ ml: { xs: 0, md: 4, sm: 4 } }}>
             <Typography
               sx={{
                 fontWeight: "bold",
