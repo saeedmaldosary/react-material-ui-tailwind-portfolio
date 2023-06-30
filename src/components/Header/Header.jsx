@@ -54,13 +54,16 @@ function Header() {
     <AppBar
       sx={{
         boxShadow: "none",
-        mt: 1,
+        mt: 0,
+        zIndex: 1,
+        position: "sticky",
+        top: 0,
       }}
       color="primary"
       position="static"
     >
       <Container>
-        <Toolbar disableGutters>
+        <Toolbar sx={{ my: 1 }} disableGutters>
           {/* Logo */}
           <Box
             sx={{
