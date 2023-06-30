@@ -87,7 +87,7 @@ const LetsTalk = () => {
           <Box
             style={{
               backgroundColor: theme.palette.secondary.main,
-              borderRadius: "35%",
+              borderRadius: "4%",
               overflow: "hidden",
               padding: "3.5rem",
             }}
