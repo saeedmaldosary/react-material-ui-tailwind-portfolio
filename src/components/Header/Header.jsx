@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react-scroll";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -12,7 +13,23 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 
-const pages = ["About", "Skills", "Certifications"];
+const pages = [
+  {
+    name: "About",
+    href: "about",
+    offset: 0,
+  },
+  {
+    name: "Skills",
+    href: "skills",
+    offset: 0,
+  },
+  {
+    name: "Certifications",
+    href: "certifications",
+    offset: 0,
+  },
+];
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -92,32 +109,41 @@ function Header() {
             }}
           >
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{
-                  my: 2,
-                  color: "secondary.contrastText",
-                  display: "block",
-                  fontWeight: 600,
-                  textTransform: "capitalize",
-                }}
+              <Link
+                to={page.href}
+                smooth={true}
+                offset={page.offset}
+                duration={500}
               >
-                {page}
-              </Button>
+                <Button
+                  key={page.name}
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    my: 2,
+                    color: "secondary.contrastText",
+                    display: "block",
+                    fontWeight: 600,
+                    textTransform: "capitalize",
+                  }}
+                >
+                  {page.name}
+                </Button>
+              </Link>
             ))}
           </Box>
 
           {/* Hire me button */}
           <Box>
-            <Button
-              variant="outlined"
-              color="secondary"
-              sx={{ textTransform: "capitalize" }}
-              startIcon={<ChatOutlinedIcon />}
-            >
-              Let's Talk
-            </Button>
+            <Link to="letsTalk" smooth={true} offset={100} duration={500}>
+              <Button
+                variant="outlined"
+                color="secondary"
+                sx={{ textTransform: "capitalize" }}
+                startIcon={<ChatOutlinedIcon />}
+              >
+                Let's Talk
+              </Button>
+            </Link>
           </Box>
 
           {/* Small screen menu */}
@@ -152,9 +178,16 @@ function Header() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
+                <Link
+                  to={page.href}
+                  smooth={true}
+                  offset={page.offset}
+                  duration={500}
+                >
+                  <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">{page.name}</Typography>
+                  </MenuItem>
+                </Link>
               ))}
             </Menu>
           </Box>

@@ -51,7 +51,7 @@ const LetsTalk = () => {
   };
 
   return (
-    <Container sx={{ mb: 5 }}>
+    <Container id="letsTalk" sx={{ mb: 5 }}>
       <Grid container>
         {/* below for text */}
         <Grid

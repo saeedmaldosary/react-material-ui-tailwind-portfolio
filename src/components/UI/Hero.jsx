@@ -12,7 +12,7 @@ const Hero = () => {
   const theme = useTheme();
 
   return (
-    <Container className="mt-10">
+    <Container id="about" className="mt-10">
       <Grid container>
         <Grid item md={8} sm={8} xs={12}>
           <div>

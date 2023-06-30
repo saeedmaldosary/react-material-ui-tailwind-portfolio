@@ -40,7 +40,7 @@ const Skills = () => {
   ];
 
   return (
-    <Container sx={{ my: 4 }}>
+    <Container id="skills" sx={{ my: 4 }}>
       <Typography variant="h5" sx={{ fontWeight: "bold", mb: 2 }}>
         Skills
       </Typography>

@@ -20,6 +20,7 @@
     "react-countup": "^6.4.2",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "react-scroll": "^1.8.9",
     "remixicon": "^3.4.0",
     "styled-components": "^6.0.0-rc.6",
     "tailwind": "^4.0.0",
