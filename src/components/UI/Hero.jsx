@@ -98,7 +98,7 @@ const Hero = () => {
           <div
             style={{
               backgroundColor: theme.palette.secondary.main,
-              borderRadius: "4%",
+              borderRadius: "4px",
               overflow: "hidden",
             }}
           >
