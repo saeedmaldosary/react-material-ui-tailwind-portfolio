@@ -39,20 +39,25 @@ const Hero = () => {
             >
               Software Engineer 👨‍💻
             </Typography>
-            <Button
-              disableElevation
-              color="secondary"
-              sx={{
-                mb: 3,
-                boxShadow: 0,
-                color: "#ffff",
-                textTransform: "capitalize",
-              }}
-              variant="contained"
-              startIcon={<ArrowCircleDownIcon />}
+            <a
+              href="https://drive.google.com/file/d/1ATLhgErIMLo7KlIoAVgJGGbOORyH6k9j/view?usp=sharing"
+              target="_blank"
             >
-              Resume
-            </Button>
+              <Button
+                disableElevation
+                color="secondary"
+                sx={{
+                  mb: 3,
+                  boxShadow: 0,
+                  color: "#ffff",
+                  textTransform: "capitalize",
+                }}
+                variant="contained"
+                startIcon={<ArrowCircleDownIcon />}
+              >
+                Resume
+              </Button>
+            </a>
             <Typography
               sx={{ mb: 4, ml: 4, maxWidth: { md: 500, sm: 400 } }}
               variant="body1"
