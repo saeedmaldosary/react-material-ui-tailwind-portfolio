@@ -11,7 +11,10 @@ import { LoadingButton } from "@mui/lab";
 import emailjs from "emailjs-com";
 import React, { useRef, useState } from "react";
 import SendIcon from "@mui/icons-material/Send";
+import PhoneAndroidOutlinedIcon from "@mui/icons-material/PhoneAndroidOutlined";
 import Grid from "@mui/material/Grid";
+import MailOutlineOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
+import Card from "@mui/material/Card";
 
 const LetsTalk = () => {
   const theme = useTheme();
@@ -74,6 +77,38 @@ const LetsTalk = () => {
             <Typography sx={{ mb: 4, ml: 4, maxWidth: 300 }} variant="body1">
               Reach me out. I can't wait to hear from you! 😚
             </Typography>
+            <Typography sx={{ mb: 4 }} variant="body1" gutterBottom>
+              Contact me:
+              <a
+                href="mailto:Saeedmaldosary@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                <MailOutlineOutlinedIcon
+                  style={{
+                    verticalAlign: "middle",
+                    fontSize: "1.2rem",
+                    marginLeft: "1.5rem",
+                    marginRight: "1.5rem",
+                  }}
+                />
+              </a>
+              <a
+                href="tel:+966566474961"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                <PhoneAndroidOutlinedIcon
+                  style={{
+                    verticalAlign: "middle",
+                    fontSize: "1.2rem",
+                    marginRight: "0.5rem",
+                  }}
+                />
+              </a>
+            </Typography>
           </Box>
         </Grid>
         {/* below for form */}
@@ -87,10 +122,10 @@ const LetsTalk = () => {
           <Box
             style={{
               backgroundColor: theme.palette.secondary.main,
-              borderRadius: "4%",
+              borderRadius: "4px",
               overflow: "hidden",
-              padding: "3.5rem",
             }}
+            sx={{ px: "1.5rem", py: { xs: "3rem", md: "3rem" } }}
           >
             <Typography
               color="primary"
