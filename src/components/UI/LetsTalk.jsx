@@ -125,7 +125,7 @@ const LetsTalk = () => {
               borderRadius: "4px",
               overflow: "hidden",
             }}
-            sx={{ px: "1.5rem", py: { xs: "3rem", md: "3rem" } }}
+            sx={{ px: "1.5rem", py: { xs: "2rem", md: "3rem" } }}
           >
             <Typography
               color="primary"
