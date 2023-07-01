@@ -46,7 +46,7 @@ const Skills = () => {
       </Typography>
       <Grid container spacing={2}>
         {skillsData.map((skill) => (
-          <Grid item key={skill.id} md={2} xs={4}>
+          <Grid item key={skill.id} md={2} sm={2} xs={4}>
             <Card
               variant="outlined"
               sx={{
