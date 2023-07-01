@@ -3,14 +3,22 @@ import Header from "./components/Header/Header";
 import Hero from "./components/UI/Hero";
 import Skills from "./components/UI/Skills";
 import LetsTalk from "./components/UI/LetsTalk";
+import Fade from "react-reveal/Fade";
 
 function App() {
+  const duration = 2000;
   return (
     <>
       <Header />
-      <Hero />
-      <Skills />
-      <LetsTalk />
+      <Fade duration={duration}>
+        <Hero />
+      </Fade>
+      <Fade duration={duration}>
+        <Skills />
+      </Fade>
+      <Fade duration={duration}>
+        <LetsTalk />
+      </Fade>
       {/* <Footer /> */}
     </>
   );
