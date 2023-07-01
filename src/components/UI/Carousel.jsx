@@ -5,6 +5,8 @@ import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import { useTheme } from "@mui/material";
 import skillsData from "./skillsData.js";
+import { Button } from "@mui/material";
+import Home from "@mui/icons-material/Home";
 
 function Example() {
   const theme = useTheme();
@@ -17,7 +19,24 @@ function Example() {
   }
 
   return (
-    <Carousel>
+    <Carousel
+      navButtonsProps={{
+        // Change the colors and radius of the actual buttons. THIS STYLES BOTH BUTTONS
+        style: {
+          display: "none",
+        },
+      }}
+      indicatorIconButtonProps={{
+        style: {
+          color: "#564899",
+        },
+      }}
+      activeIndicatorIconButtonProps={{
+        style: {
+          color: "#beb1fa",
+        },
+      }}
+    >
       {groupedSkillsData.map((row, rowIndex) => (
         <Grid key={rowIndex} container spacing={2}>
           {row.map((item) => (
