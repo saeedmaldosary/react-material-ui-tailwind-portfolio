@@ -63,7 +63,7 @@ function Header() {
       position="static"
     >
       <Container>
-        <Toolbar sx={{ my: 1 }} disableGutters>
+        <Toolbar sx={{ mt: 1 }} disableGutters>
           {/* Logo */}
           <Box
             sx={{
@@ -75,7 +75,7 @@ function Header() {
               variant="contained"
               disableElevation
               sx={{
-                borderRadius: "50%",
+                borderRadius: "4px",
                 minWidth: 0,
                 padding: 0,
                 boxShadow: "none",
@@ -83,6 +83,7 @@ function Header() {
             >
               <Avatar
                 sx={{
+                  borderRadius: "4px",
                   width: 40,
                   height: 40,
                   backgroundColor: "secondary.main",
@@ -96,7 +97,7 @@ function Header() {
                     fontWeight: "bold",
                   }}
                 >
-                  S
+                  SA
                 </Typography>
               </Avatar>
             </Button>

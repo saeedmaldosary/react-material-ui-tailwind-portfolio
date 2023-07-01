@@ -1,12 +1,9 @@
 import React from "react";
 import Carousel from "react-material-ui-carousel";
-import Item from "./Item";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import { useTheme } from "@mui/material";
-import skillsData from "./skillsData.js";
-import { Button } from "@mui/material";
-import Home from "@mui/icons-material/Home";
+import skillsData from "../../assets/data/skillsData.js";
 
 function Example() {
   const theme = useTheme();
