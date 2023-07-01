@@ -1,14 +1,13 @@
 import React from "react";
-import Carousel from "react-material-ui-carousel";
+import MUICarousel from "react-material-ui-carousel";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import { useTheme } from "@mui/material";
 import skillsData from "../../assets/data/skillsData.js";
 
-function Example() {
+function Carousel() {
   const theme = useTheme();
 
-  // Group the skills data into an array of arrays, each containing four items
   const itemsPerRow = 6;
   const groupedSkillsData = [];
   for (let i = 0; i < skillsData.length; i += itemsPerRow) {
@@ -16,9 +15,8 @@ function Example() {
   }
 
   return (
-    <Carousel
+    <MUICarousel
       navButtonsProps={{
-        // Change the colors and radius of the actual buttons. THIS STYLES BOTH BUTTONS
         style: {
           display: "none",
         },
@@ -62,8 +60,8 @@ function Example() {
           ))}
         </Grid>
       ))}
-    </Carousel>
+    </MUICarousel>
   );
 }
 
-export default Example;
+export default Carousel;
