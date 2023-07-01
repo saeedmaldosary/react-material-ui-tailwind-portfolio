@@ -6,7 +6,7 @@ import LetsTalk from "./components/UI/LetsTalk";
 import Fade from "react-reveal/Fade";
 
 function App() {
-  const duration = 1000;
+  const duration = 2000;
   return (
     <>
       <Header />
