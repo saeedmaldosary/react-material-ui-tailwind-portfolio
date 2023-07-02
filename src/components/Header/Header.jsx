@@ -127,6 +127,7 @@ function Header() {
                     color: "secondary.contrastText",
                     display: "block",
                     fontWeight: 600,
+                    fontSize: "16px",
                     textTransform: "capitalize",
                   }}
                 >

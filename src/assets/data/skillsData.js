@@ -5,7 +5,7 @@ import VueImage from "../../assets/images/skills/Vue.png";
 import ReactImage from "../../assets/images/skills/React.png";
 import BootstrapImage from "../../assets/images/skills/Bootstrap.png";
 import TailwindImage from "../../assets/images/skills/Tailwind.png";
-import WebmethodsImage from "../../assets/images/skills/Webmethods.png";
+import VuetifyImage from "../../assets/images/skills/Vuetify.png";
 import NodejsImage from "../../assets/images/skills/Nodejs.png";
 import ExpressjsImage from "../../assets/images/skills/Expressjs.png";
 import SQLImage from "../../assets/images/skills/SQL.png";
@@ -19,7 +19,7 @@ const skillsData = [
   { id: 5, image: ReactImage, name: "React" },
   { id: 6, image: BootstrapImage, name: "Bootstrap" },
   { id: 7, image: TailwindImage, name: "Tailwind" },
-  { id: 8, image: WebmethodsImage, name: "Webmethods" },
+  { id: 8, image: VuetifyImage, name: "Vuetify" },
   { id: 9, image: NodejsImage, name: "Node.js" },
   { id: 10, image: ExpressjsImage, name: "Express.js" },
   { id: 11, image: SQLImage, name: "SQL" },
