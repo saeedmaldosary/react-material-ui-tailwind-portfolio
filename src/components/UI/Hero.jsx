@@ -7,6 +7,7 @@ import saeedImage from "../../assets/images/Saeed.png";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import ArrowCircleDownIcon from "@mui/icons-material/ArrowCircleDown";
+import { Typewriter, Cursor } from "react-simple-typewriter";
 
 const Hero = () => {
   const theme = useTheme();
@@ -38,7 +39,16 @@ const Hero = () => {
               }}
               variant="body1"
             >
-              Software Engineer 👨‍💻
+              <Typewriter
+                words={[" Software Engineer", "Full Stack Developer"]}
+                loop={false}
+                cursor
+                cursorStyle="_"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+              />
+              👨‍💻
             </Typography>
             <a
               href="https://drive.google.com/file/d/1ATLhgErIMLo7KlIoAVgJGGbOORyH6k9j/view?usp=sharing"
