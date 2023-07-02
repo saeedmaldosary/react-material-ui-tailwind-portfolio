@@ -6,9 +6,9 @@ import SoftwareAGImage from "../../assets/images/certifications/SoftwareAG.png";
 const certificationsData = [
   {
     id: 1,
-    image: APIAcademyImage,
-    IssuingORG: "API Academy",
-    name: "API Designer",
+    image: ScrumORGImage,
+    IssuingORG: "Scrum.org",
+    name: "Professional Scrum Master ",
   },
   {
     id: 2,
@@ -18,9 +18,9 @@ const certificationsData = [
   },
   {
     id: 3,
-    image: ScrumORGImage,
-    IssuingORG: "Scrum.org",
-    name: "Professional Scrum Master ",
+    image: APIAcademyImage,
+    IssuingORG: "API Academy",
+    name: "API Designer",
   },
   {
     id: 4,
