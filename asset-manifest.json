@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-material-ui-tailwind-portfolio/static/css/main.a35e630e.css",
-    "main.js": "/react-material-ui-tailwind-portfolio/static/js/main.ba113d12.js",
+    "main.js": "/react-material-ui-tailwind-portfolio/static/js/main.5e6f1d01.js",
     "static/media/remixicon.svg?t=1687271883607": "/react-material-ui-tailwind-portfolio/static/media/remixicon.636515c9a8963df4380d.svg",
     "static/media/remixicon.eot?t=1687271883607": "/react-material-ui-tailwind-portfolio/static/media/remixicon.83e9a22ce7f199999169.eot",
     "static/media/remixicon.ttf?t=1687271883607": "/react-material-ui-tailwind-portfolio/static/media/remixicon.0bcb16fc20c3d365da14.ttf",
@@ -30,10 +30,10 @@
     "static/media/urbanist-latin-ext-400-normal.woff2": "/react-material-ui-tailwind-portfolio/static/media/urbanist-latin-ext-400-normal.93ab504f4b92e5779696.woff2",
     "index.html": "/react-material-ui-tailwind-portfolio/index.html",
     "main.a35e630e.css.map": "/react-material-ui-tailwind-portfolio/static/css/main.a35e630e.css.map",
-    "main.ba113d12.js.map": "/react-material-ui-tailwind-portfolio/static/js/main.ba113d12.js.map"
+    "main.5e6f1d01.js.map": "/react-material-ui-tailwind-portfolio/static/js/main.5e6f1d01.js.map"
   },
   "entrypoints": [
     "static/css/main.a35e630e.css",
-    "static/js/main.ba113d12.js"
+    "static/js/main.5e6f1d01.js"
   ]
 }
