@@ -10,9 +10,7 @@ import NodejsImage from "../../assets/images/skills/Nodejs.png";
 import ExpressjsImage from "../../assets/images/skills/Expressjs.png";
 import SQLImage from "../../assets/images/skills/SQL.png";
 import GitImage from "../../assets/images/skills/Git.png";
-import Carousel from "react-material-ui-carousel";
 
-// Array of skills data
 const skillsData = [
   { id: 1, image: HTMLImage, name: "HTML" },
   { id: 2, image: CSSImage, name: "CSS" },
@@ -26,8 +24,6 @@ const skillsData = [
   { id: 10, image: ExpressjsImage, name: "Express.js" },
   { id: 11, image: SQLImage, name: "SQL" },
   { id: 12, image: GitImage, name: "Git" },
-
-  // Add other skills with their respective image paths
 ];
 
 export default skillsData;
