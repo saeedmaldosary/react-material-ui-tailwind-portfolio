@@ -3,6 +3,7 @@ import Grid from "@mui/material/Grid";
 import MUICarousel from "react-material-ui-carousel";
 import Typography from "@mui/material/Typography";
 import Card from "@mui/material/Card";
+import InsertLinkOutlinedIcon from "@mui/icons-material/InsertLinkOutlined";
 import { Box, useTheme, useMediaQuery } from "@mui/material";
 
 function CertificationsCard({ certificationsData }) {
@@ -40,11 +41,11 @@ function CertificationsCard({ certificationsData }) {
           {row.map((item) => (
             <Grid key={item.id} item xs={6} md={3} sm={3}>
               <Card
+                id="parentCard"
                 variant="outlined"
                 sx={{
                   boxShadow: 0,
                   backgroundColor: theme.palette.secondary.main,
-                  borderColor: theme.palette.secondary.main,
                   height: "100%",
                   minHeight: { xs: "230px", md: "100%" },
                   position: "relative",
@@ -95,6 +96,27 @@ function CertificationsCard({ certificationsData }) {
                     </Box>
                   </Grid>
                 </Grid>
+                <Box
+                  sx={{
+                    position: "absolute",
+                    bottom: "10px",
+                    right: "10px",
+                  }}
+                >
+                  <a
+                    href={item.credentialURL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
+                    <InsertLinkOutlinedIcon
+                      style={{
+                        fontSize: "1.2rem",
+                        marginLeft: "1.5rem",
+                      }}
+                    />
+                  </a>
+                </Box>
               </Card>
             </Grid>
           ))}
