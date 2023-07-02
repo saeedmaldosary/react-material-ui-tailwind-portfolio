@@ -1,5 +1,6 @@
 {
-  "name": "portfolio-website",
+  "homepage": "https://saeedmaldosary.github.io/react-material-ui-tailwind-portfolio",
+  "name": "Saeed-Aldosary",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -24,6 +25,7 @@
     "react-reveal": "^1.2.2",
     "react-scripts": "5.0.1",
     "react-scroll": "^1.8.9",
+    "react-simple-typewriter": "^5.0.1",
     "remixicon": "^3.4.0",
     "styled-components": "^6.0.0-rc.6",
     "tailwind": "^4.0.0",
@@ -31,6 +33,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -54,6 +58,7 @@
     ]
   },
   "devDependencies": {
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "gh-pages": "^5.0.0"
   }
 }
