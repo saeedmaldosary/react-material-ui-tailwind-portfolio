@@ -75,7 +75,7 @@ const LetsTalk = () => {
               Let's Talk
             </Typography>
             <Typography sx={{ mb: 4, ml: 4, maxWidth: 300 }} variant="body1">
-              Reach me out. I can't wait to hear from you! 😚
+              Reach me out. I can't wait to hear from you! 🤩
             </Typography>
             <Typography sx={{ mb: 4 }} variant="body1" gutterBottom>
               Contact me:
