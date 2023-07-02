@@ -1,6 +1,7 @@
 import { Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import Carousel from "./Carousel";
+import skillsData from "../../assets/data/skillsData.js";
 
 const Skills = () => {
   return (
@@ -8,7 +9,7 @@ const Skills = () => {
       <Typography variant="h5" sx={{ fontWeight: "bold", mb: 2 }}>
         Skills
       </Typography>
-      <Carousel />
+      <Carousel skillsData={skillsData} />
     </Container>
   );
 };

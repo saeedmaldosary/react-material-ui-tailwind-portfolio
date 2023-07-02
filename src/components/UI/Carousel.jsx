@@ -3,9 +3,8 @@ import MUICarousel from "react-material-ui-carousel";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import { useTheme } from "@mui/material";
-import skillsData from "../../assets/data/skillsData.js";
 
-function Carousel() {
+function Carousel({ skillsData }) {
   const theme = useTheme();
 
   const itemsPerRow = 6;
@@ -23,12 +22,12 @@ function Carousel() {
       }}
       indicatorIconButtonProps={{
         style: {
-          color: "#564899",
+          color: "#beb1fa",
         },
       }}
       activeIndicatorIconButtonProps={{
         style: {
-          color: "#beb1fa",
+          color: "#564899",
         },
       }}
     >
