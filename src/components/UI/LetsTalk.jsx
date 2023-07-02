@@ -60,7 +60,7 @@ const LetsTalk = () => {
             order: { xs: 1, md: 2, sm: 2 },
           }}
           item
-          md={8}
+          md={7}
           sm={7}
           xs={12}
         >
@@ -114,7 +114,7 @@ const LetsTalk = () => {
         {/* below for form */}
         <Grid
           item
-          md={4}
+          md={5}
           sm={5}
           xs={12}
           sx={{ order: { xs: 2, md: 1, sm: 1 } }}
@@ -125,7 +125,10 @@ const LetsTalk = () => {
               borderRadius: "4px",
               overflow: "hidden",
             }}
-            sx={{ px: "1.5rem", py: { xs: "2rem", md: "3rem" } }}
+            sx={{
+              px: "1.5rem",
+              py: { xs: "2rem", md: "3rem" },
+            }}
           >
             <Typography
               color="primary"
