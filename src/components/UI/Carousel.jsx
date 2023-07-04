@@ -8,7 +8,8 @@ function Carousel({ skillsData }) {
   const theme = useTheme();
 
   const isMdScreen = useMediaQuery(theme.breakpoints.up("md"));
-  const itemsPerRow = isMdScreen ? 6 : 3;
+  const isSmScreen = useMediaQuery(theme.breakpoints.up("sm"));
+  const itemsPerRow = isMdScreen || isSmScreen ? 6 : 3;
   const groupedSkillsData = [];
   for (let i = 0; i < skillsData.length; i += itemsPerRow) {
     groupedSkillsData.push(skillsData.slice(i, i + itemsPerRow));

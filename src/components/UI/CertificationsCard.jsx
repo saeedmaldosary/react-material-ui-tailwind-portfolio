@@ -10,7 +10,8 @@ function CertificationsCard({ certificationsData }) {
   const theme = useTheme();
 
   const isMdScreen = useMediaQuery(theme.breakpoints.up("md"));
-  const itemsPerRow = isMdScreen ? 4 : 2;
+  const isSmScreen = useMediaQuery(theme.breakpoints.up("sm"));
+  const itemsPerRow = isMdScreen || isSmScreen ? 4 : 2;
   const groupedCertificationsData = [];
   for (let i = 0; i < certificationsData.length; i += itemsPerRow) {
     groupedCertificationsData.push(
