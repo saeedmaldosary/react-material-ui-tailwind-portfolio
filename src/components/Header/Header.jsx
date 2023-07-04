@@ -17,17 +17,20 @@ const pages = [
   {
     name: "About",
     href: "about",
-    offset: 0,
+    offsetMD: -100,
+    offsetXS: -100,
   },
   {
     name: "Skills",
     href: "skills",
-    offset: 0,
+    offsetMD: -100,
+    offsetXS: -80,
   },
   {
     name: "Certifications",
     href: "certifications",
-    offset: 0,
+    offsetMD: 0,
+    offsetXS: -80,
   },
 ];
 
@@ -116,7 +119,7 @@ function Header() {
               <Link
                 to={page.href}
                 smooth={true}
-                offset={page.offset}
+                offset={page.offsetMD}
                 duration={500}
               >
                 <Button
@@ -186,7 +189,7 @@ function Header() {
                 <Link
                   to={page.href}
                   smooth={true}
-                  offset={page.offset}
+                  offset={page.offsetXS}
                   duration={500}
                 >
                   <MenuItem key={page.name} onClick={handleCloseNavMenu}>
