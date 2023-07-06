@@ -5,24 +5,44 @@ import Skills from "./components/UI/Skills";
 import Certifications from "./components/UI/Certifications";
 import LetsTalk from "./components/UI/LetsTalk";
 import Fade from "react-reveal/Fade";
+import PreLoader from "./components/UI/Preloader";
+import { useEffect, useState } from "react";
 
 function App() {
   const duration = 2000;
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2500);
+  }, []);
+
   return (
     <>
-      <Header />
-      <Fade duration={duration}>
-        <Hero />
-      </Fade>
-      <Fade duration={duration}>
-        <Skills />
-      </Fade>
-      <Fade duration={duration}>
-        <Certifications />
-      </Fade>
-      <Fade duration={duration}>
-        <LetsTalk />
-      </Fade>
+      {isLoading ? (
+        <PreLoader />
+      ) : (
+        <>
+          <Fade duration={duration}>
+            <Header />
+          </Fade>
+          <Fade duration={duration}>
+            <Hero />
+          </Fade>
+          <Fade duration={duration}>
+            <Skills />
+          </Fade>
+          <Fade duration={duration}>
+            <Certifications />
+          </Fade>
+          <Fade duration={duration}>
+            <LetsTalk />
+          </Fade>
+        </>
+      )}
+
       {/* <Footer /> */}
     </>
   );
