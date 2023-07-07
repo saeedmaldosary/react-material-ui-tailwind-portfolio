@@ -15,15 +15,11 @@ const LetsTalk = () => {
   const [loading, setLoading] = useState(false);
   const [openSuccess, setOpenSuccess] = React.useState(false);
   const [openFailure, setOpenFailure] = React.useState(false);
+  const [formCompleted, setFormCompleted] = useState(false); // Track form completion
 
   const sendEmail = (e) => {
     e.preventDefault();
     setLoading(true);
-
-    // setTimeout(function () {
-    //   setLoading(false);
-    //   setOpenSuccess(true);
-    // }, 2000);
 
     emailjs
       .sendForm(
@@ -44,6 +40,15 @@ const LetsTalk = () => {
       );
   };
 
+  const handleChange = () => {
+    // Check if all form fields have values
+    const formData = new FormData(form.current);
+    const isFormCompleted = [...formData.values()].every(
+      (value) => value.trim() !== ""
+    );
+    setFormCompleted(isFormCompleted);
+  };
+
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
       return;
@@ -57,7 +62,7 @@ const LetsTalk = () => {
       <Snackbar
         anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
         open={openSuccess}
-        autoHideDuration={3000}
+        autoHideDuration={6000}
         onClose={handleClose}
       >
         <Alert onClose={handleClose} severity="success" sx={{ width: "80%" }}>
@@ -67,7 +72,7 @@ const LetsTalk = () => {
       <Snackbar
         anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
         open={openFailure}
-        autoHideDuration={3000}
+        autoHideDuration={6000}
         onClose={handleClose}
       >
         <Alert onClose={handleClose} severity="error" sx={{ width: "80%" }}>
@@ -163,14 +168,14 @@ const LetsTalk = () => {
             >
               Send me a message 🚀
             </Typography>
-            <form ref={form} onSubmit={sendEmail}>
+            <form ref={form} onSubmit={sendEmail} onChange={handleChange}>
               <TextField
                 focused
                 label="Name"
                 variant="outlined"
                 name="user_name"
                 fullWidth
-                inputProps={{ style: { color: "#FFFFFF" } }}
+                inputProps={{ maxLength: 70, style: { color: "#FFFFFF" } }}
                 sx={{
                   marginBottom: "1rem",
                 }}
@@ -182,7 +187,7 @@ const LetsTalk = () => {
                 name="user_email"
                 type="email"
                 fullWidth
-                inputProps={{ style: { color: "#FFFFFF" } }}
+                inputProps={{ maxLength: 254, style: { color: "#FFFFFF" } }}
                 sx={{
                   marginBottom: "1rem",
                 }}
@@ -195,7 +200,7 @@ const LetsTalk = () => {
                 multiline
                 rows={4}
                 fullWidth
-                inputProps={{ style: { color: "#FFFFFF" } }}
+                inputProps={{ maxLength: 500, style: { color: "#FFFFFF" } }}
                 sx={{
                   marginBottom: "1rem",
                 }}
@@ -215,6 +220,7 @@ const LetsTalk = () => {
                   loading={loading}
                   color="primary"
                   loadingPosition="start"
+                  disabled={!formCompleted} // Disable the button if the form is not completed
                   sx={{
                     textTransform: "capitalize",
                   }}
