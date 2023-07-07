@@ -1,12 +1,4 @@
-import {
-  Box,
-  Container,
-  TextField,
-  Button,
-  Typography,
-  CircularProgress,
-  useTheme,
-} from "@mui/material";
+import { Box, Container, TextField, Typography, useTheme } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
 import emailjs from "emailjs-com";
 import React, { useRef, useState } from "react";
@@ -14,7 +6,6 @@ import SendIcon from "@mui/icons-material/Send";
 import PhoneAndroidOutlinedIcon from "@mui/icons-material/PhoneAndroidOutlined";
 import Grid from "@mui/material/Grid";
 import MailOutlineOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
-import Card from "@mui/material/Card";
 
 const LetsTalk = () => {
   const theme = useTheme();
@@ -25,29 +16,29 @@ const LetsTalk = () => {
     e.preventDefault();
     setLoading(true);
 
-    setTimeout(function () {
-      setLoading(false);
-    }, 4000);
+    // setTimeout(function () {
+    //   setLoading(false);
+    // }, 4000);
 
-    // emailjs
-    //   .sendForm(
-    //     process.env.REACT_APP_SERVICE_ID,
-    //     process.env.REACT_APP_TEMPLATE_ID,
-    //     form.current,
-    //     process.env.REACT_APP_PUBLIC_KEY
-    //   )
-    //   .then(
-    //     (result) => {
-    //       console.log(result.text);
-    //       console.log("Success");
-    //       setLoading(false);
-    //     },
-    //     (error) => {
-    //       console.log(error.text);
-    //       console.log("Error");
-    //       setLoading(false);
-    //     }
-    //   );
+    emailjs
+      .sendForm(
+        process.env.REACT_APP_SERVICE_ID,
+        process.env.REACT_APP_TEMPLATE_ID,
+        form.current,
+        process.env.REACT_APP_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          console.log("Success");
+          setLoading(false);
+        },
+        (error) => {
+          console.log(error.text);
+          console.log("Error");
+          setLoading(false);
+        }
+      );
   };
 
   return (
@@ -68,6 +59,7 @@ const LetsTalk = () => {
             <Typography
               sx={{
                 fontWeight: "bold",
+                mb: 1,
                 fontSize: { xs: "28px", md: "32px" },
               }}
               variant="body1"

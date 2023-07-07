@@ -39,7 +39,7 @@ function CertificationsCard({ certificationsData }) {
     >
       {groupedCertificationsData.map((row, rowIndex) => (
         <Grid key={rowIndex} container spacing={2}>
-          {row.map((item) => (
+          {row.map((item, itemIndex) => (
             <Grid key={item.id} item xs={6} md={3} sm={3}>
               <Card
                 id="parentCard"
@@ -53,7 +53,13 @@ function CertificationsCard({ certificationsData }) {
                 }}
               >
                 <Grid container spacing={2}>
-                  <Grid key={item.id} item xs={12} md={12} sm={12}>
+                  <Grid
+                    key={`${rowIndex}-${itemIndex}`}
+                    item
+                    xs={12}
+                    md={12}
+                    sm={12}
+                  >
                     <Card
                       id="nestedCard"
                       sx={{

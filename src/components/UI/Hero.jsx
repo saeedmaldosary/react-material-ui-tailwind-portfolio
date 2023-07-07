@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, useTheme, useMediaQuery } from "@mui/material";
+import { Container, useTheme } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
@@ -7,7 +7,7 @@ import saeedImage from "../../assets/images/Saeed.png";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import ArrowCircleDownIcon from "@mui/icons-material/ArrowCircleDown";
-import { Typewriter, Cursor } from "react-simple-typewriter";
+import { Typewriter } from "react-simple-typewriter";
 
 const Hero = () => {
   const theme = useTheme();

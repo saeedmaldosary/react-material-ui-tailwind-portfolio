@@ -36,21 +36,13 @@ const pages = [
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
   };
 
   return (
@@ -117,6 +109,7 @@ function Header() {
           >
             {pages.map((page) => (
               <Link
+                key={page.name}
                 to={page.href}
                 smooth={true}
                 offset={page.offsetMD}
@@ -187,6 +180,7 @@ function Header() {
             >
               {pages.map((page) => (
                 <Link
+                  key={page.name}
                   to={page.href}
                   smooth={true}
                   offset={page.offsetXS}
