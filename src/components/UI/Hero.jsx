@@ -18,7 +18,7 @@ const Hero = () => {
         {/* Text */}
         <Grid item md={8} sm={7} xs={12}>
           <div>
-            <Typography sx={{ mb: 2, fontSize: { xs: "22px", md: "24px" } }}>
+            <Typography sx={{ fontSize: { xs: "22px", md: "24px" } }}>
               Hello,
             </Typography>
             <Typography

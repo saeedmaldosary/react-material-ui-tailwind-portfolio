@@ -5,12 +5,16 @@ import React, { useRef, useState } from "react";
 import SendIcon from "@mui/icons-material/Send";
 import PhoneAndroidOutlinedIcon from "@mui/icons-material/PhoneAndroidOutlined";
 import Grid from "@mui/material/Grid";
+import Alert from "@mui/material/Alert";
+import Snackbar from "@mui/material/Snackbar";
 import MailOutlineOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
 
 const LetsTalk = () => {
   const theme = useTheme();
   const form = useRef();
   const [loading, setLoading] = useState(false);
+  const [openSuccess, setOpenSuccess] = React.useState(false);
+  const [openFailure, setOpenFailure] = React.useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -18,7 +22,8 @@ const LetsTalk = () => {
 
     // setTimeout(function () {
     //   setLoading(false);
-    // }, 4000);
+    //   setOpenSuccess(true);
+    // }, 2000);
 
     emailjs
       .sendForm(
@@ -29,20 +34,46 @@ const LetsTalk = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
-          console.log("Success");
+          setOpenSuccess(true);
           setLoading(false);
         },
         (error) => {
-          console.log(error.text);
-          console.log("Error");
+          setOpenFailure(true);
           setLoading(false);
         }
       );
   };
 
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpenFailure(false);
+    setOpenSuccess(false);
+  };
+
   return (
     <Container id="letsTalk" sx={{ mb: 5 }}>
+      <Snackbar
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        open={openSuccess}
+        autoHideDuration={3000}
+        onClose={handleClose}
+      >
+        <Alert onClose={handleClose} severity="success" sx={{ width: "80%" }}>
+          Message sent successfully!
+        </Alert>
+      </Snackbar>
+      <Snackbar
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        open={openFailure}
+        autoHideDuration={3000}
+        onClose={handleClose}
+      >
+        <Alert onClose={handleClose} severity="error" sx={{ width: "80%" }}>
+          Message failed to send.
+        </Alert>
+      </Snackbar>
       <Grid container>
         {/* below for text */}
         <Grid
