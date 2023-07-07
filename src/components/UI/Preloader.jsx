@@ -32,7 +32,7 @@ const PreLoader = () => {
           variant="contained"
           color="secondary"
           sx={{
-            borderRadius: "4px",
+            borderRadius: "6px",
             boxShadow: "none",
             width: 150,
             height: 150,
@@ -43,6 +43,7 @@ const PreLoader = () => {
             component="span"
             color="primary"
             sx={{
+              letterSpacing: -2,
               fontWeight: "bold",
               fontSize: "80px",
             }}
