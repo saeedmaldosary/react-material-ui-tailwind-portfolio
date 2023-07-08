@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "https://saeedmaldosary.com/static/css/main.094837e1.css",
-    "main.js": "https://saeedmaldosary.com/static/js/main.feee490d.js",
+    "main.css": "https://saeedmaldosary.com/static/css/main.e28013e4.css",
+    "main.js": "https://saeedmaldosary.com/static/js/main.9b30a18a.js",
     "static/media/remixicon.svg?t=1687271883607": "https://saeedmaldosary.com/static/media/remixicon.636515c9a8963df4380d.svg",
     "static/media/remixicon.eot?t=1687271883607": "https://saeedmaldosary.com/static/media/remixicon.83e9a22ce7f199999169.eot",
     "static/media/remixicon.ttf?t=1687271883607": "https://saeedmaldosary.com/static/media/remixicon.0bcb16fc20c3d365da14.ttf",
-    "static/media/Saeed.png": "https://saeedmaldosary.com/static/media/Saeed.b19bcb126e8c468e4005.png",
+    "static/media/SaeedColored.png": "https://saeedmaldosary.com/static/media/SaeedColored.cc66e379ec23bf617f2b.png",
     "static/media/remixicon.woff?t=1687271883607": "https://saeedmaldosary.com/static/media/remixicon.3f0f84f17d39491e07ff.woff",
     "static/media/ScrumORG.png": "https://saeedmaldosary.com/static/media/ScrumORG.c2aa1d0a0aeade59f0ef.png",
     "static/media/remixicon.woff2?t=1687271883607": "https://saeedmaldosary.com/static/media/remixicon.85992a032c7668836563.woff2",
@@ -29,11 +29,11 @@
     "static/media/urbanist-latin-ext-400-normal.woff": "https://saeedmaldosary.com/static/media/urbanist-latin-ext-400-normal.f0562b58c84b6f659a0c.woff",
     "static/media/urbanist-latin-ext-400-normal.woff2": "https://saeedmaldosary.com/static/media/urbanist-latin-ext-400-normal.93ab504f4b92e5779696.woff2",
     "index.html": "https://saeedmaldosary.com/index.html",
-    "main.094837e1.css.map": "https://saeedmaldosary.com/static/css/main.094837e1.css.map",
-    "main.feee490d.js.map": "https://saeedmaldosary.com/static/js/main.feee490d.js.map"
+    "main.e28013e4.css.map": "https://saeedmaldosary.com/static/css/main.e28013e4.css.map",
+    "main.9b30a18a.js.map": "https://saeedmaldosary.com/static/js/main.9b30a18a.js.map"
   },
   "entrypoints": [
-    "static/css/main.094837e1.css",
-    "static/js/main.feee490d.js"
+    "static/css/main.e28013e4.css",
+    "static/js/main.9b30a18a.js"
   ]
 }
