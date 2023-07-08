@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "https://saeedmaldosary.com/static/css/main.e28013e4.css",
-    "main.js": "https://saeedmaldosary.com/static/js/main.e5a6b0d8.js",
+    "main.css": "https://saeedmaldosary.com/static/css/main.8614144a.css",
+    "main.js": "https://saeedmaldosary.com/static/js/main.cae3651c.js",
     "static/media/remixicon.svg?t=1687271883607": "https://saeedmaldosary.com/static/media/remixicon.636515c9a8963df4380d.svg",
     "static/media/remixicon.eot?t=1687271883607": "https://saeedmaldosary.com/static/media/remixicon.83e9a22ce7f199999169.eot",
     "static/media/remixicon.ttf?t=1687271883607": "https://saeedmaldosary.com/static/media/remixicon.0bcb16fc20c3d365da14.ttf",
@@ -29,11 +29,11 @@
     "static/media/urbanist-latin-ext-400-normal.woff": "https://saeedmaldosary.com/static/media/urbanist-latin-ext-400-normal.f0562b58c84b6f659a0c.woff",
     "static/media/urbanist-latin-ext-400-normal.woff2": "https://saeedmaldosary.com/static/media/urbanist-latin-ext-400-normal.93ab504f4b92e5779696.woff2",
     "index.html": "https://saeedmaldosary.com/index.html",
-    "main.e28013e4.css.map": "https://saeedmaldosary.com/static/css/main.e28013e4.css.map",
-    "main.e5a6b0d8.js.map": "https://saeedmaldosary.com/static/js/main.e5a6b0d8.js.map"
+    "main.8614144a.css.map": "https://saeedmaldosary.com/static/css/main.8614144a.css.map",
+    "main.cae3651c.js.map": "https://saeedmaldosary.com/static/js/main.cae3651c.js.map"
   },
   "entrypoints": [
-    "static/css/main.e28013e4.css",
-    "static/js/main.e5a6b0d8.js"
+    "static/css/main.8614144a.css",
+    "static/js/main.cae3651c.js"
   ]
 }
