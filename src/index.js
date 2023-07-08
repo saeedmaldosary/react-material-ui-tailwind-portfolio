@@ -3,10 +3,6 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import "@fontsource/urbanist"; // Import the font
-
-import "aos/dist/aos.css";
-import "remixicon/fonts/remixicon.css";
 
 const theme = createTheme({
   typography: {
