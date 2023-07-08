@@ -1,17 +1,35 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, useTheme } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import saeedImage from "../../assets/images/Saeed.png";
+import saeedImage from "../../assets/images/SaeedColored.png";
+import saeedImageW20 from "../../assets/images/Saeed-w20.png";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import ArrowCircleDownIcon from "@mui/icons-material/ArrowCircleDown";
 import { Typewriter } from "react-simple-typewriter";
+import "./ImageLazyLoad.css";
 
 const Hero = () => {
   const theme = useTheme();
 
+  useEffect(() => {
+    const blurDivs = document.querySelectorAll(".blur-load");
+    blurDivs.forEach((div) => {
+      const img = div.querySelector("img");
+
+      function loaded() {
+        div.classList.add("loaded");
+      }
+
+      if (img.complete) {
+        loaded();
+      } else {
+        img.addEventListener("load", loaded);
+      }
+    });
+  }, []);
   return (
     <Container id="about" className="mt-10">
       <Grid container>
@@ -119,13 +137,19 @@ const Hero = () => {
               overflow: "hidden",
             }}
           >
-            <img
-              style={{
-                marginTop: "90px",
-              }}
-              src={saeedImage}
-              alt="Transparent Image"
-            />
+            <div
+              className="blur-load"
+              style={{ backgroundImage: `url(${saeedImageW20})` }}
+            >
+              <img
+                style={{
+                  marginTop: "90px",
+                }}
+                src={saeedImage}
+                alt="Transparent Image"
+                loading="lazy"
+              />
+            </div>
           </div>
         </Grid>
       </Grid>

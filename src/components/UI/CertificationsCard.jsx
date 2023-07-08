@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Grid from "@mui/material/Grid";
 import MUICarousel from "react-material-ui-carousel";
 import Typography from "@mui/material/Typography";
 import Card from "@mui/material/Card";
 import InsertLinkOutlinedIcon from "@mui/icons-material/InsertLinkOutlined";
 import { Box, useTheme, useMediaQuery } from "@mui/material";
+import "./ImageLazyLoad.css";
 
 function CertificationsCard({ certificationsData }) {
   const theme = useTheme();
@@ -18,6 +19,23 @@ function CertificationsCard({ certificationsData }) {
       certificationsData.slice(i, i + itemsPerRow)
     );
   }
+
+  useEffect(() => {
+    const blurDivs = document.querySelectorAll(".blur-load");
+    blurDivs.forEach((div) => {
+      const img = div.querySelector("img");
+
+      function loaded() {
+        div.classList.add("loaded");
+      }
+
+      if (img.complete) {
+        loaded();
+      } else {
+        img.addEventListener("load", loaded);
+      }
+    });
+  }, []);
 
   return (
     <MUICarousel
@@ -74,15 +92,20 @@ function CertificationsCard({ certificationsData }) {
                         position: "relative",
                       }}
                     >
-                      <img
-                        src={item.image}
-                        alt={item.name}
-                        style={{
-                          display: "block",
-                          margin: "0 auto",
-                          width: "40px",
-                        }}
-                      />
+                      <div
+                        className="blur-load"
+                        style={{ backgroundImage: `url(${item.imageW20})` }}
+                      >
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          style={{
+                            display: "block",
+                            margin: "0 auto",
+                            width: "40px",
+                          }}
+                        />
+                      </div>
                     </Card>
                   </Grid>
                   <Grid key={item.id} item xs={12} md={12} sm={12}>

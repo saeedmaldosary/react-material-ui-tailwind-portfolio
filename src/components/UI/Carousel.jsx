@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MUICarousel from "react-material-ui-carousel";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import { useTheme, useMediaQuery } from "@mui/material";
+import "./ImageLazyLoad.css";
 
 function Carousel({ skillsData }) {
   const theme = useTheme();
@@ -14,6 +15,23 @@ function Carousel({ skillsData }) {
   for (let i = 0; i < skillsData.length; i += itemsPerRow) {
     groupedSkillsData.push(skillsData.slice(i, i + itemsPerRow));
   }
+
+  useEffect(() => {
+    const blurDivs = document.querySelectorAll(".blur-load");
+    blurDivs.forEach((div) => {
+      const img = div.querySelector("img");
+
+      function loaded() {
+        div.classList.add("loaded");
+      }
+
+      if (img.complete) {
+        loaded();
+      } else {
+        img.addEventListener("load", loaded);
+      }
+    });
+  }, []);
 
   return (
     <MUICarousel
@@ -51,11 +69,16 @@ function Carousel({ skillsData }) {
                   position: "relative",
                 }}
               >
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  style={{ width: "40px" }}
-                />
+                <div
+                  className="blur-load"
+                  style={{ backgroundImage: `url(${item.imageW20})` }}
+                >
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    style={{ width: "40px" }}
+                  />
+                </div>
               </Card>
             </Grid>
           ))}
