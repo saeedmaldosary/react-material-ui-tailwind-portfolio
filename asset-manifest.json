@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "https://saeedmaldosary.com/static/css/main.7936c20b.css",
+    "main.css": "https://saeedmaldosary.com/static/css/main.62266145.css",
     "main.js": "https://saeedmaldosary.com/static/js/main.cae3651c.js",
     "static/media/SaeedColored.png": "https://saeedmaldosary.com/static/media/SaeedColored.cc66e379ec23bf617f2b.png",
     "static/media/ScrumORG.png": "https://saeedmaldosary.com/static/media/ScrumORG.c2aa1d0a0aeade59f0ef.png",
@@ -17,14 +17,15 @@
     "static/media/SoftwareAG.png": "https://saeedmaldosary.com/static/media/SoftwareAG.4062096e49f8df08ad4d.png",
     "static/media/Vue.png": "https://saeedmaldosary.com/static/media/Vue.b82055ca164e9948e408.png",
     "static/media/HTML.png": "https://saeedmaldosary.com/static/media/HTML.a5107193d634d306c2d2.png",
+    "static/media/Urbanist-Regular.woff2": "https://saeedmaldosary.com/static/media/Urbanist-Regular.815b5b15f1752ff93a1c.woff2",
     "static/media/Git.png": "https://saeedmaldosary.com/static/media/Git.43a314e43a1259848dff.png",
     "static/media/Expressjs.png": "https://saeedmaldosary.com/static/media/Expressjs.c72d530f9fbbffa23485.png",
     "index.html": "https://saeedmaldosary.com/index.html",
-    "main.7936c20b.css.map": "https://saeedmaldosary.com/static/css/main.7936c20b.css.map",
+    "main.62266145.css.map": "https://saeedmaldosary.com/static/css/main.62266145.css.map",
     "main.cae3651c.js.map": "https://saeedmaldosary.com/static/js/main.cae3651c.js.map"
   },
   "entrypoints": [
-    "static/css/main.7936c20b.css",
+    "static/css/main.62266145.css",
     "static/js/main.cae3651c.js"
   ]
 }
