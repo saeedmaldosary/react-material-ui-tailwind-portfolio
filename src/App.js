@@ -7,6 +7,7 @@ import LetsTalk from "./components/UI/LetsTalk";
 import Fade from "react-reveal/Fade";
 import PreLoader from "./components/UI/Preloader";
 import { useEffect, useState } from "react";
+import "./App.css";
 
 function App() {
   const duration = 2000;
