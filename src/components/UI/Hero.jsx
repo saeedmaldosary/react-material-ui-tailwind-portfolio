@@ -9,7 +9,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import ArrowCircleDownIcon from "@mui/icons-material/ArrowCircleDown";
 import { Typewriter } from "react-simple-typewriter";
-import "./ImageLazyLoad.css";
+import "./Hero.css";
 
 const Hero = () => {
   const theme = useTheme();
@@ -142,6 +142,7 @@ const Hero = () => {
               style={{ backgroundImage: `url(${saeedImageW20})` }}
             >
               <img
+                className="heroImage"
                 style={{
                   marginTop: "90px",
                 }}
