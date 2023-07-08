@@ -1,4 +1,11 @@
-import { Box, Container, TextField, Typography, useTheme } from "@mui/material";
+import {
+  Box,
+  Container,
+  TextField,
+  Typography,
+  useTheme,
+  Snackbar,
+} from "@mui/material";
 import { LoadingButton } from "@mui/lab";
 import emailjs from "emailjs-com";
 import React, { useRef, useState } from "react";
@@ -6,7 +13,6 @@ import SendIcon from "@mui/icons-material/Send";
 import PhoneAndroidOutlinedIcon from "@mui/icons-material/PhoneAndroidOutlined";
 import Grid from "@mui/material/Grid";
 import Alert from "@mui/material/Alert";
-import Snackbar from "@mui/material/Snackbar";
 import MailOutlineOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
 
 const LetsTalk = () => {
@@ -16,9 +22,17 @@ const LetsTalk = () => {
   const [openSuccess, setOpenSuccess] = React.useState(false);
   const [openFailure, setOpenFailure] = React.useState(false);
   const [formCompleted, setFormCompleted] = useState(false); // Track form completion
+  const [showFillMessage, setShowFillMessage] = useState(false); // Track whether to show fill message
 
   const sendEmail = (e) => {
     e.preventDefault();
+
+    if (!formCompleted) {
+      // If form is not completed, show fill message
+      setShowFillMessage(true);
+      return;
+    }
+
     setLoading(true);
 
     emailjs
@@ -220,7 +234,7 @@ const LetsTalk = () => {
                   loading={loading}
                   color="primary"
                   loadingPosition="start"
-                  disabled={!formCompleted} // Disable the button if the form is not completed
+                  // disabled={!formCompleted} // Disable the button if the form is not completed
                   sx={{
                     textTransform: "capitalize",
                   }}
@@ -229,6 +243,21 @@ const LetsTalk = () => {
                 </LoadingButton>
               </Box>
             </form>
+            {showFillMessage && (
+              <Snackbar
+                open={showFillMessage}
+                autoHideDuration={6000}
+                onClose={() => setShowFillMessage(false)}
+                anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+              >
+                <Alert
+                  onClose={() => setShowFillMessage(false)}
+                  severity="warning"
+                >
+                  Please fill in all the fields.
+                </Alert>
+              </Snackbar>
+            )}
           </Box>
         </Grid>
       </Grid>
