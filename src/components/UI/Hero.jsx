@@ -1,14 +1,9 @@
 import React, { useEffect } from "react";
-import { Container, useTheme } from "@mui/material";
-import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
+import { Container, Grid, Typography, Button, useTheme } from "@mui/material";
+import { GitHub, LinkedIn, ArrowCircleDown } from "@mui/icons-material";
+import { Typewriter } from "react-simple-typewriter";
 import saeedImage from "../../assets/images/SaeedColored.png";
 import saeedImageW20 from "../../assets/images/Saeed-w20.png";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import ArrowCircleDownIcon from "@mui/icons-material/ArrowCircleDown";
-import { Typewriter } from "react-simple-typewriter";
 import "./Hero.css";
 
 const Hero = () => {
@@ -82,7 +77,7 @@ const Hero = () => {
                   textTransform: "capitalize",
                 }}
                 variant="contained"
-                startIcon={<ArrowCircleDownIcon />}
+                startIcon={<ArrowCircleDown />}
               >
                 Resume
               </Button>
@@ -102,7 +97,7 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 style={{ textDecoration: "none", color: "inherit" }}
               >
-                <GitHubIcon
+                <GitHub
                   style={{
                     verticalAlign: "middle",
                     fontSize: "1.2rem",
@@ -117,7 +112,7 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 style={{ textDecoration: "none", color: "inherit" }}
               >
-                <LinkedInIcon
+                <LinkedIn
                   style={{
                     verticalAlign: "middle",
                     fontSize: "1.2rem",

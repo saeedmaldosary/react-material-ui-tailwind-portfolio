@@ -1,10 +1,14 @@
 import React from "react";
-import Grid from "@mui/material/Grid";
 import MUICarousel from "react-material-ui-carousel";
-import Typography from "@mui/material/Typography";
-import Card from "@mui/material/Card";
 import InsertLinkOutlinedIcon from "@mui/icons-material/InsertLinkOutlined";
-import { Box, useTheme, useMediaQuery } from "@mui/material";
+import {
+  Box,
+  useTheme,
+  useMediaQuery,
+  Grid,
+  Card,
+  Typography,
+} from "@mui/material";
 
 function CertificationsCard({ certificationsData }) {
   const theme = useTheme();

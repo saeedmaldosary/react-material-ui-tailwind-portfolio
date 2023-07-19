@@ -1,3 +1,4 @@
+import React, { useRef, useState } from "react";
 import {
   Box,
   Container,
@@ -5,15 +6,16 @@ import {
   Typography,
   useTheme,
   Snackbar,
+  Grid,
+  Alert,
 } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
 import emailjs from "emailjs-com";
-import React, { useRef, useState } from "react";
-import SendIcon from "@mui/icons-material/Send";
-import PhoneAndroidOutlinedIcon from "@mui/icons-material/PhoneAndroidOutlined";
-import Grid from "@mui/material/Grid";
-import Alert from "@mui/material/Alert";
-import MailOutlineOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
+import {
+  PhoneAndroidOutlined,
+  MailOutlineOutlined,
+  Send,
+} from "@mui/icons-material";
 
 const LetsTalk = () => {
   const theme = useTheme();
@@ -127,7 +129,7 @@ const LetsTalk = () => {
                 rel="noopener noreferrer"
                 style={{ textDecoration: "none", color: "inherit" }}
               >
-                <MailOutlineOutlinedIcon
+                <MailOutlineOutlined
                   style={{
                     verticalAlign: "middle",
                     fontSize: "1.2rem",
@@ -142,7 +144,7 @@ const LetsTalk = () => {
                 rel="noopener noreferrer"
                 style={{ textDecoration: "none", color: "inherit" }}
               >
-                <PhoneAndroidOutlinedIcon
+                <PhoneAndroidOutlined
                   style={{
                     verticalAlign: "middle",
                     fontSize: "1.2rem",
@@ -228,7 +230,7 @@ const LetsTalk = () => {
               >
                 <LoadingButton
                   disableElevation
-                  startIcon={<SendIcon />}
+                  startIcon={<Send />}
                   variant="contained"
                   type="submit"
                   loading={loading}

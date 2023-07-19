@@ -1,8 +1,6 @@
 import React from "react";
 import MUICarousel from "react-material-ui-carousel";
-import Grid from "@mui/material/Grid";
-import Card from "@mui/material/Card";
-import { useTheme, useMediaQuery } from "@mui/material";
+import { useTheme, useMediaQuery, Grid, Card } from "@mui/material";
 
 function Carousel({ skillsData }) {
   const theme = useTheme();

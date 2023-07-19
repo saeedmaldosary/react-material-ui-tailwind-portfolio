@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import Box from "@mui/material/Box";
+import { Typography, Button, Box } from "@mui/material";
 import { Fade } from "react-reveal";
 
 const PreLoader = () => {
