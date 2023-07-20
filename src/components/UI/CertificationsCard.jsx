@@ -32,12 +32,15 @@ function CertificationsCard({ certificationsData }) {
       }}
       indicatorIconButtonProps={{
         style: {
-          color: "#beb1fa",
+          color:
+            theme.components.MuiCarousel.styleOverrides.dot.backgroundColor,
         },
       }}
       activeIndicatorIconButtonProps={{
         style: {
-          color: "#564899",
+          color:
+            theme.components.MuiCarousel.styleOverrides.dotActive
+              .backgroundColor,
         },
       }}
     >

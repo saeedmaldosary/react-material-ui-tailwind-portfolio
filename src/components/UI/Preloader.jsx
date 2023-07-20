@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Typography, Button, Box } from "@mui/material";
+import { Typography, Button, Box, useTheme } from "@mui/material";
 import { Fade } from "react-reveal";
 
 const PreLoader = () => {
   const duration = 1500;
+  const theme = useTheme();
   const [showPreLoader, setShowPreLoader] = useState(false);
 
   useEffect(() => {
@@ -14,6 +15,9 @@ const PreLoader = () => {
 
     return () => clearTimeout(timer);
   }, []);
+
+  const buttonSize = 150;
+  const logoFontSize = 80;
 
   return (
     <Fade in={showPreLoader} duration={duration}>
@@ -32,18 +36,18 @@ const PreLoader = () => {
           sx={{
             borderRadius: "6px",
             boxShadow: "none",
-            width: 150,
-            height: 150,
+            width: buttonSize,
+            height: buttonSize,
           }}
         >
           <Typography
-            variant="body1"
+            variant="h1"
             component="span"
-            color="primary"
             sx={{
               letterSpacing: -2,
               fontWeight: "bold",
-              fontSize: "80px",
+              fontSize: logoFontSize,
+              color: theme.palette.primary.main,
             }}
           >
             SA
