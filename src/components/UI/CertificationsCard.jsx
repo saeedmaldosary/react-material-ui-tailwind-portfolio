@@ -121,7 +121,10 @@ function CertificationsCard({ certificationsData }) {
                     href={item.credentialURL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ textDecoration: "none", color: "inherit" }}
+                    style={{
+                      textDecoration: "none",
+                      color: theme.typography.allVariants.color,
+                    }}
                   >
                     <InsertLinkOutlinedIcon
                       style={{

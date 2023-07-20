@@ -38,6 +38,10 @@ const PreLoader = () => {
             boxShadow: "none",
             width: buttonSize,
             height: buttonSize,
+            cursor: "default",
+            "&:hover": {
+              backgroundColor: theme.palette.secondary.main,
+            },
           }}
         >
           <Typography

@@ -77,6 +77,7 @@ function Header() {
                 minWidth: 0,
                 padding: 0,
                 boxShadow: "none",
+                cursor: "default",
               }}
             >
               <Avatar

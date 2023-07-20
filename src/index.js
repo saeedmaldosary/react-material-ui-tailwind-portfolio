@@ -4,12 +4,18 @@ import "./index.css";
 import App from "./App";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
+const textColor = "#193256";
+const mainColor = "#8873ef";
+const mdScreenMenuColor = "#564899";
+const hoverActiveColor = "#564899";
+
 const theme = createTheme({
   typography: {
     allVariants: {
       fontFamily: "Urbanist",
       // Below the color of text (not include the color of text in the buttons and the text in send me message card)
-      color: "#193256",
+      // Color of icon in certification cards
+      color: textColor,
     },
   },
   components: {
@@ -17,7 +23,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           "&:hover": {
-            backgroundColor: "#564899",
+            backgroundColor: hoverActiveColor,
             color: "#ffffff",
           },
         },
@@ -26,10 +32,10 @@ const theme = createTheme({
     MuiCarousel: {
       styleOverrides: {
         dot: {
-          backgroundColor: "#8873ef",
+          backgroundColor: mainColor,
         },
         dotActive: {
-          backgroundColor: "#564899",
+          backgroundColor: hoverActiveColor,
         },
       },
     },
@@ -37,19 +43,19 @@ const theme = createTheme({
   palette: {
     primary: {
       // Below for Header background color
-      // certifcation color backgtound(orgs logo background)
+      // certifications color background(orgs logo background)
       //  button of send me message card
       // send me message text
       // Color of Text in preload logo
       main: "#ffffff",
       // Below the color of text for button in send me message card
-      contrastText: "#8873ef",
+      contrastText: mainColor,
     },
     secondary: {
       // Below for Logo Preloader card and cards and buttons
-      main: "#8873ef",
+      main: mainColor,
       // Below for menu in big screen About , Skills, Certification
-      contrastText: "#564899",
+      contrastText: mdScreenMenuColor,
     },
   },
 });
