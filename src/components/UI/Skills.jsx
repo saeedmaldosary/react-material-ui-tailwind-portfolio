@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
 import { Container } from "@mui/system";
-import Carousel from "./Carousel";
+import Carousel from "./SkillsCarousel";
 import skillsData from "../../assets/data/skillsData.js";
 
 const Skills = () => {

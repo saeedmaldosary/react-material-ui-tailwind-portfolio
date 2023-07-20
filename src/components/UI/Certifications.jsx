@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
 import { Container } from "@mui/system";
-import CertificationsCard from "./CertificationsCard";
+import CertificationsCard from "./CertificationsCarousel";
 import certificationsData from "../../assets/data/certificationsData.js";
 
 const Certifications = () => {
