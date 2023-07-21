@@ -157,6 +157,7 @@ function Header() {
                 size={letsTalkButtonSize}
                 sx={{
                   textTransform: "capitalize",
+                  backgroundColor: "#ffffff",
                 }}
                 startIcon={<ChatOutlined />}
               >

@@ -41,6 +41,7 @@ function Carousel({ skillsData }) {
               <Card
                 variant="outlined"
                 sx={{
+                  backgroundColor: "#FFFFFF",
                   borderColor: theme.palette.secondary.main,
                   display: "flex",
                   flexDirection: "column",
