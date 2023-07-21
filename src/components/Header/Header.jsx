@@ -12,9 +12,11 @@ import {
   Avatar,
   Button,
   MenuItem,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 
-import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
+import { ChatOutlined, LightMode, DarkMode } from "@mui/icons-material";
 
 const pages = [
   {
@@ -38,7 +40,12 @@ const pages = [
 ];
 
 function Header() {
+  const theme = useTheme();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+
+  const isMdScreen = useMediaQuery(theme.breakpoints.up("md"));
+  const isSmScreen = useMediaQuery(theme.breakpoints.up("sm"));
+  const letsTalkButtonSize = isMdScreen || isSmScreen ? "medium" : "small";
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -137,18 +144,29 @@ function Header() {
             ))}
           </Box>
 
+          <Box sx={{ display: { xs: "none", md: "flex" }, pr: 1 }}>
+            <LightMode />
+          </Box>
+
           {/* Hire me button */}
           <Box>
             <Link to="letsTalk" smooth={true} offset={100} duration={500}>
               <Button
                 variant="outlined"
                 color="secondary"
-                sx={{ textTransform: "capitalize" }}
-                startIcon={<ChatOutlinedIcon />}
+                size={letsTalkButtonSize}
+                sx={{
+                  textTransform: "capitalize",
+                }}
+                startIcon={<ChatOutlined />}
               >
                 Let's Talk
               </Button>
             </Link>
+          </Box>
+
+          <Box sx={{ display: { xs: "flex", md: "none" }, pl: 1 }}>
+            <LightMode />
           </Box>
 
           {/* Small screen menu */}
@@ -195,6 +213,9 @@ function Header() {
                   </MenuItem>
                 </Link>
               ))}
+              {/* <MenuItem>
+                <LightMode sx={{ display: { xs: "block", md: "none" } }} />
+              </MenuItem> */}
             </Menu>
           </Box>
         </Toolbar>
