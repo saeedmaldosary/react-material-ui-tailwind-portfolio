@@ -159,9 +159,9 @@ function Header({ change }) {
             }}
           >
             {isDarkMode ? (
-              <LightMode sx={{ color: theme.palette.primary.action }} />
-            ) : (
               <DarkMode sx={{ color: theme.palette.primary.action }} />
+            ) : (
+              <LightMode sx={{ color: theme.palette.primary.action }} />
             )}
           </Box>
 
@@ -192,9 +192,9 @@ function Header({ change }) {
             }}
           >
             {isDarkMode ? (
-              <LightMode sx={{ color: theme.palette.primary.action }} />
-            ) : (
               <DarkMode sx={{ color: theme.palette.primary.action }} />
+            ) : (
+              <LightMode sx={{ color: theme.palette.primary.action }} />
             )}
           </Box>
 
@@ -238,13 +238,12 @@ function Header({ change }) {
                   duration={500}
                 >
                   <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page.name}</Typography>
+                    <Typography sx={{ fontSize: "14px", fontWeight: "bold" }}>
+                      {page.name}
+                    </Typography>
                   </MenuItem>
                 </Link>
               ))}
-              {/* <MenuItem>
-                <LightMode sx={{ display: { xs: "block", md: "none" } }} />
-              </MenuItem> */}
             </Menu>
           </Box>
         </Toolbar>
