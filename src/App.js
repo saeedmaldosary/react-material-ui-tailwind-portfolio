@@ -8,7 +8,7 @@ import Fade from "react-reveal/Fade";
 import { useEffect, useState } from "react";
 import "./App.css";
 
-function App() {
+function App({ change }) {
   const duration = 2000;
 
   const [isLoading, setIsLoading] = useState(true);
@@ -26,7 +26,7 @@ function App() {
       ) : (
         <>
           <Fade duration={duration}>
-            <Header />
+            <Header change={change} />
           </Fade>
           <Fade duration={duration}>
             <Hero />

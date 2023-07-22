@@ -39,7 +39,7 @@ const pages = [
   },
 ];
 
-function Header() {
+function Header({ change }) {
   const theme = useTheme();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [isDarkMode, setIsDarkMode] = React.useState(false); // State to track dark mode
@@ -56,9 +56,9 @@ function Header() {
     setAnchorElNav(null);
   };
 
-  // Function to toggle dark mode
-  const toggleDarkMode = () => {
+  const handleToggleDarkMode = () => {
     setIsDarkMode((prevMode) => !prevMode);
+    change(!isDarkMode); // Notify the parent component about the dark mode change
   };
 
   return (
@@ -151,13 +151,13 @@ function Header() {
           </Box>
 
           <Box
-            onClick={toggleDarkMode}
+            onClick={handleToggleDarkMode}
             sx={{ display: { xs: "none", md: "flex" }, pr: 1 }}
           >
             {isDarkMode ? (
-              <DarkMode sx={{ color: theme.palette.primary.action }} />
-            ) : (
               <LightMode sx={{ color: theme.palette.primary.action }} />
+            ) : (
+              <DarkMode sx={{ color: theme.palette.primary.action }} />
             )}
           </Box>
 
@@ -180,13 +180,13 @@ function Header() {
           </Box>
 
           <Box
-            onClick={toggleDarkMode}
+            onClick={handleToggleDarkMode}
             sx={{ display: { xs: "flex", md: "none" }, pl: 1 }}
           >
             {isDarkMode ? (
-              <DarkMode sx={{ color: theme.palette.primary.action }} />
-            ) : (
               <LightMode sx={{ color: theme.palette.primary.action }} />
+            ) : (
+              <DarkMode sx={{ color: theme.palette.primary.action }} />
             )}
           </Box>
 
