@@ -145,7 +145,7 @@ function Header() {
           </Box>
 
           <Box sx={{ display: { xs: "none", md: "flex" }, pr: 1 }}>
-            <LightMode />
+            <LightMode sx={{ color: theme.palette.primary.action }} />
           </Box>
 
           {/* Hire me button */}
@@ -167,7 +167,7 @@ function Header() {
           </Box>
 
           <Box sx={{ display: { xs: "flex", md: "none" }, pl: 1 }}>
-            <LightMode />
+            <LightMode sx={{ color: theme.palette.primary.action }} />
           </Box>
 
           {/* Small screen menu */}
@@ -181,7 +181,7 @@ function Header() {
               sx={{ p: 0, pl: 1 }}
               color="secondary"
             >
-              <MenuIcon />
+              <MenuIcon sx={{ color: theme.palette.primary.action }} />
             </IconButton>
             <Menu
               id="menu-appbar"
