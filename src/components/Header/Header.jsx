@@ -42,6 +42,7 @@ const pages = [
 function Header() {
   const theme = useTheme();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [isDarkMode, setIsDarkMode] = React.useState(false); // State to track dark mode
 
   const isMdScreen = useMediaQuery(theme.breakpoints.up("md"));
   const isSmScreen = useMediaQuery(theme.breakpoints.up("sm"));
@@ -53,6 +54,11 @@ function Header() {
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
+  };
+
+  // Function to toggle dark mode
+  const toggleDarkMode = () => {
+    setIsDarkMode((prevMode) => !prevMode);
   };
 
   return (
@@ -144,8 +150,15 @@ function Header() {
             ))}
           </Box>
 
-          <Box sx={{ display: { xs: "none", md: "flex" }, pr: 1 }}>
-            <LightMode sx={{ color: theme.palette.primary.action }} />
+          <Box
+            onClick={toggleDarkMode}
+            sx={{ display: { xs: "none", md: "flex" }, pr: 1 }}
+          >
+            {isDarkMode ? (
+              <DarkMode sx={{ color: theme.palette.primary.action }} />
+            ) : (
+              <LightMode sx={{ color: theme.palette.primary.action }} />
+            )}
           </Box>
 
           {/* Hire me button */}
@@ -166,8 +179,15 @@ function Header() {
             </Link>
           </Box>
 
-          <Box sx={{ display: { xs: "flex", md: "none" }, pl: 1 }}>
-            <LightMode sx={{ color: theme.palette.primary.action }} />
+          <Box
+            onClick={toggleDarkMode}
+            sx={{ display: { xs: "flex", md: "none" }, pl: 1 }}
+          >
+            {isDarkMode ? (
+              <DarkMode sx={{ color: theme.palette.primary.action }} />
+            ) : (
+              <LightMode sx={{ color: theme.palette.primary.action }} />
+            )}
           </Box>
 
           {/* Small screen menu */}
