@@ -152,7 +152,11 @@ function Header({ change }) {
 
           <Box
             onClick={handleToggleDarkMode}
-            sx={{ display: { xs: "none", md: "flex" }, pr: 1 }}
+            sx={{
+              display: { xs: "none", md: "flex" },
+              mr: 1,
+              cursor: "pointer",
+            }}
           >
             {isDarkMode ? (
               <LightMode sx={{ color: theme.palette.primary.action }} />
@@ -181,7 +185,11 @@ function Header({ change }) {
 
           <Box
             onClick={handleToggleDarkMode}
-            sx={{ display: { xs: "flex", md: "none" }, pl: 1 }}
+            sx={{
+              display: { xs: "flex", md: "none" },
+              ml: 1,
+              cursor: "pointer",
+            }}
           >
             {isDarkMode ? (
               <LightMode sx={{ color: theme.palette.primary.action }} />
@@ -198,7 +206,7 @@ function Header({ change }) {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              sx={{ p: 0, pl: 1 }}
+              sx={{ p: 0, ml: 1 }}
               color="secondary"
             >
               <MenuIcon sx={{ color: theme.palette.primary.action }} />
