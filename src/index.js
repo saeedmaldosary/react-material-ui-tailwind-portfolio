@@ -16,7 +16,7 @@ const colors = {
   xsScreenMenu: { light: "#2d1b74", dark: "#2d1b74" },
   hoverActive: { light: "#2d1b74", dark: "#ffffff" },
   carouselActive: { light: "#2d1b74", dark: "#8873ef" },
-  carousel: { light: "#8873ef", dark: "#ffffff" },
+  carousel: { light: "#8873ef", dark: "#b8abf5" },
   buttonHoverTextColor: { light: "#FFFFFF", dark: "#2d1b74" },
   background: { light: "#ffffff", dark: "#2d1b74" },
   outlinedButtonHover: { light: "#2d1b74", dark: "#8873ef" },
