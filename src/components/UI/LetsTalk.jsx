@@ -165,13 +165,13 @@ const LetsTalk = () => {
         >
           <Box
             style={{
-              backgroundColor: theme.palette.secondary.main,
               borderRadius: "4px",
               overflow: "hidden",
             }}
             sx={{
               px: "1.5rem",
               py: { xs: "2rem", md: "3rem" },
+              backgroundColor: theme.palette.box.main,
             }}
           >
             <Typography

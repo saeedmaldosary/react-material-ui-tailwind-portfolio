@@ -98,7 +98,6 @@ function Header({ change }) {
                   borderRadius: "4px",
                   width: 40,
                   height: 40,
-                  backgroundColor: "secondary.main",
                 }}
               >
                 <Typography
@@ -174,7 +173,6 @@ function Header({ change }) {
                 size={letsTalkButtonSize}
                 sx={{
                   textTransform: "capitalize",
-                  backgroundColor: "#ffffff",
                 }}
                 startIcon={<ChatOutlined />}
               >

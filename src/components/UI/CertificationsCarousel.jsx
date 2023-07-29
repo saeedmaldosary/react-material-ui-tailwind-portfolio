@@ -53,7 +53,6 @@ function CertificationsCard({ certificationsData }) {
                 variant="outlined"
                 sx={{
                   boxShadow: 0,
-                  backgroundColor: theme.palette.secondary.main,
                   height: "100%",
                   minHeight: { xs: "230px", md: "100%" },
                   position: "relative",
@@ -70,10 +69,10 @@ function CertificationsCard({ certificationsData }) {
                     <Card
                       id="nestedCard"
                       sx={{
+                        backgroundColor: "#ffffff",
                         boxShadow: 0,
                         borderRadius: 0,
                         height: "100px",
-                        backgroundColor: theme.palette.primary.main,
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",

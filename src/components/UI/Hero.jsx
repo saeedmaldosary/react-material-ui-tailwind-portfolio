@@ -1,5 +1,12 @@
 import React, { useEffect } from "react";
-import { Container, Grid, Typography, Button, useTheme } from "@mui/material";
+import {
+  Container,
+  Grid,
+  Typography,
+  Button,
+  useTheme,
+  Card,
+} from "@mui/material";
 import { GitHub, LinkedIn, ArrowCircleDown } from "@mui/icons-material";
 import { Typewriter } from "react-simple-typewriter";
 import saeedImage from "../../assets/images/SaeedColored.png";
@@ -125,9 +132,9 @@ const Hero = () => {
         </Grid>
         {/* Pic */}
         <Grid item md={4} sm={5} xs={12}>
-          <div
+          <Card
+            elevation={0}
             style={{
-              backgroundColor: theme.palette.secondary.main,
               borderRadius: "4px",
               overflow: "hidden",
             }}
@@ -146,7 +153,7 @@ const Hero = () => {
                 loading="lazy"
               />
             </div>
-          </div>
+          </Card>
         </Grid>
       </Grid>
     </Container>

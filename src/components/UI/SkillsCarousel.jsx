@@ -42,7 +42,6 @@ function Carousel({ skillsData }) {
                 variant="outlined"
                 sx={{
                   backgroundColor: "#FFFFFF",
-                  borderColor: theme.palette.secondary.main,
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",

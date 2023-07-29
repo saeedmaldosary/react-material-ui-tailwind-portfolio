@@ -12,42 +12,61 @@ const AppWrapper = () => {
   const colorsMode = isDarkMode ? "dark" : "light";
 
   const colors = {
+    background: { light: "#ffffff", dark: "#2d1b74" },
     text: { light: "#2d1b74", dark: "#ffffff" },
     main: { light: "#8873ef", dark: "#8873ef" },
     action: { light: "#8873ef", dark: "#ffffff" },
     mdScreenMenu: { light: "#2d1b74", dark: "#ffffff" },
     xsScreenMenu: { light: "#2d1b74", dark: "#2d1b74" },
-    hoverActive: { light: "#2d1b74", dark: "#ffffff" },
+    cardBackground: { light: "#8873ef", dark: "#8873ef" },
+    cardBorder: { light: "#8873ef", dark: "#8873ef" },
+    boxBackground: { light: "#8873ef", dark: "#8873ef" },
+    avatarBackground: { light: "#8873ef", dark: "#8873ef" },
     carouselActive: { light: "#2d1b74", dark: "#8873ef" },
-    carousel: { light: "#8873ef", dark: "#b8abf5" },
-    buttonHoverTextColor: { light: "#FFFFFF", dark: "#2d1b74" },
-    background: { light: "#ffffff", dark: "#2d1b74" },
-    outlinedButtonHover: { light: "#2d1b74", dark: "#8873ef" },
-    outlinedButtonHoverTextColor: { light: "#ffffff", dark: "#ffffff" },
+    carouselInactive: { light: "#8873ef", dark: "#b8abf5" },
+    buttonHover: { light: "#2d1b74", dark: "#ffffff" },
+    buttonHoverText: { light: "#ffffff", dark: "#2d1b74" },
+    containedButton: { light: "#8873ef", dark: "#8873ef" },
+    outlinedButton: {
+      light: "rgba(136, 115, 239, 0.5)",
+      dark: "rgba(255, 255, 255, 0.5)",
+    },
+    outlinedButtonText: {
+      light: "#8873ef",
+      dark: "#ffffff",
+    },
+    outlinedButtonHover: { light: "#2d1b74", dark: "#ffffff" },
+    outlinedButtonBorderHover: { light: "#8873ef", dark: "#8873ef" },
+    outlinedButtonHoverText: { light: "#ffffff", dark: "#2d1b74" },
     loadingButton: { light: "#ffffff", dark: "#2d1b74" },
-    loadingButtonTextColor: { light: "#8873ef", dark: "#ffffff" },
-    loadingButtonTHover: { light: "#2d1b74", dark: "#FFFFFF" },
-    loadingButtonHoverTextColor: { light: "#FFFFFF", dark: "#2d1b74" },
+    loadingButtonText: { light: "#8873ef", dark: "#ffffff" },
+    loadingButtonHover: { light: "#2d1b74", dark: "#FFFFFF" },
+    loadingButtonHoverText: { light: "#FFFFFF", dark: "#2d1b74" },
   };
 
   const theme = createTheme({
     typography: {
       allVariants: {
         fontFamily: "Urbanist",
-        // Below the color of text (not include the color of text in the buttons and the text in send me message card)
-        // Color of icon in certification cards
         color: colors.text[colorsMode],
       },
     },
     components: {
+      MuiAvatar: {
+        styleOverrides: {
+          root: {
+            backgroundColor: colors.avatarBackground[colorsMode],
+          },
+        },
+      },
       MuiLoadingButton: {
         styleOverrides: {
           root: {
             backgroundColor: colors.loadingButton[colorsMode],
-            color: colors.loadingButtonTextColor[colorsMode],
+            color: colors.loadingButtonText[colorsMode],
             "&:hover": {
-              backgroundColor: colors.loadingButtonTHover[colorsMode],
-              color: colors.loadingButtonHoverTextColor[colorsMode],
+              backgroundColor: colors.loadingButtonHover[colorsMode],
+              color: colors.loadingButtonHoverText[colorsMode],
             },
           },
         },
@@ -65,30 +84,41 @@ const AppWrapper = () => {
         styleOverrides: {
           root: {
             "&:hover": {
-              backgroundColor: colors.hoverActive[colorsMode],
-              color: colors.background[colorsMode],
+              backgroundColor: colors.buttonHover[colorsMode],
+              color: colors.buttonHoverText[colorsMode],
             },
           },
           contained: {
-            backgroundColor: colors.main[colorsMode], // Replace this with your desired background color
+            backgroundColor: colors.containedButton[colorsMode],
             color: "#ffffff",
             "&:hover": {
-              backgroundColor: colors.hoverActive[colorsMode],
-              color: colors.buttonHoverTextColor[colorsMode],
+              backgroundColor: colors.buttonHover[colorsMode],
+              color: colors.buttonHoverText[colorsMode],
             },
           },
           outlined: {
+            borderColor: colors.outlinedButton[colorsMode],
+            color: colors.outlinedButtonText[colorsMode],
             "&:hover": {
               backgroundColor: colors.outlinedButtonHover[colorsMode],
-              color: colors.outlinedButtonHoverTextColor[colorsMode],
+              borderColor: colors.outlinedButtonBorderHover[colorsMode],
+              color: colors.outlinedButtonHoverText[colorsMode],
             },
+          },
+        },
+      },
+      MuiCard: {
+        styleOverrides: {
+          root: {
+            backgroundColor: colors.cardBackground[colorsMode],
+            borderColor: colors.cardBorder[colorsMode],
           },
         },
       },
       MuiCarousel: {
         styleOverrides: {
           dot: {
-            backgroundColor: colors.carousel[colorsMode],
+            backgroundColor: colors.carouselInactive[colorsMode],
           },
           dotActive: {
             backgroundColor: colors.carouselActive[colorsMode],
@@ -108,21 +138,15 @@ const AppWrapper = () => {
         default: colors.background[colorsMode],
       },
       primary: {
-        // Below for Header background color
-        // certifications color background(orgs logo background)
-        //  button of send me message card
-        // send me message text
-        // Color of Text in preload logo
-        main: "#ffffff",
-        // Below the color of text for button in send me message card
-        contrastText: colors.main[colorsMode],
+        main: "#FFFFFF",
         action: colors.action[colorsMode],
       },
       secondary: {
-        // Below for Logo Preloader card and cards and buttons
-        main: colors.main[colorsMode],
-        // Below for menu in big screen About , Skills, Certification
+        main: "#FFC0CB",
         contrastText: colors.mdScreenMenu[colorsMode],
+      },
+      box: {
+        main: colors.boxBackground[colorsMode],
       },
     },
   });
