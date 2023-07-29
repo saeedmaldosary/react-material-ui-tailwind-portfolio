@@ -1,21 +1,12 @@
 import React, { useEffect } from "react";
-import {
-  Container,
-  Grid,
-  Typography,
-  Button,
-  useTheme,
-  Card,
-} from "@mui/material";
+import { Container, Grid, Typography, Button, Card } from "@mui/material";
 import { GitHub, LinkedIn, ArrowCircleDown } from "@mui/icons-material";
 import { Typewriter } from "react-simple-typewriter";
-import saeedImage from "../../assets/images/SaeedColored.png";
+import saeedImage from "../../assets/images/Saeed.png";
 import saeedImageW20 from "../../assets/images/Saeed-w20.png";
 import "./Hero.css";
 
 const Hero = () => {
-  const theme = useTheme();
-
   useEffect(() => {
     const blurDivs = document.querySelectorAll(".blur-load");
     blurDivs.forEach((div) => {
@@ -23,6 +14,7 @@ const Hero = () => {
 
       function loaded() {
         div.classList.add("loaded");
+        div.style.backgroundImage = "";
       }
 
       if (img.complete) {
@@ -76,7 +68,6 @@ const Hero = () => {
             >
               <Button
                 disableElevation
-                color="secondary"
                 sx={{
                   mb: 3,
                   boxShadow: 0,
@@ -150,7 +141,6 @@ const Hero = () => {
                 }}
                 src={saeedImage}
                 alt="Transparent Image"
-                loading="lazy"
               />
             </div>
           </Card>

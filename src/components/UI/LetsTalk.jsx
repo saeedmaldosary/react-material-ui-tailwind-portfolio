@@ -175,8 +175,8 @@ const LetsTalk = () => {
             }}
           >
             <Typography
-              color="primary"
               sx={{
+                color: "#ffff",
                 mb: 2,
                 fontWeight: "bold",
                 fontSize: { xs: "20px", md: "22px", sm: "18px" },
@@ -188,7 +188,8 @@ const LetsTalk = () => {
               <TextField
                 focused
                 label="Name"
-                variant="outlined"
+                color="textField"
+                variant="filled"
                 name="user_name"
                 fullWidth
                 inputProps={{ maxLength: 70, style: { color: "#FFFFFF" } }}
@@ -198,12 +199,16 @@ const LetsTalk = () => {
               />
               <TextField
                 label="Email"
+                color="textField"
                 focused
-                variant="outlined"
+                variant="filled"
                 name="user_email"
                 type="email"
                 fullWidth
-                inputProps={{ maxLength: 254, style: { color: "#FFFFFF" } }}
+                inputProps={{
+                  maxLength: 254,
+                  style: { color: "#FFFFFF" },
+                }}
                 sx={{
                   marginBottom: "1rem",
                 }}
@@ -211,12 +216,17 @@ const LetsTalk = () => {
               <TextField
                 label="Message"
                 focused
-                variant="outlined"
+                variant="filled"
+                color="textField"
                 name="message"
                 multiline
                 rows={4}
                 fullWidth
-                inputProps={{ maxLength: 500, style: { color: "#FFFFFF" } }}
+                inputProps={{
+                  maxLength: 500,
+                  style: { color: "#FFFFFF" },
+                  inputProps: { style: { color: "#fff" } },
+                }}
                 sx={{
                   marginBottom: "1rem",
                 }}
@@ -234,9 +244,7 @@ const LetsTalk = () => {
                   variant="contained"
                   type="submit"
                   loading={loading}
-                  color="primary"
                   loadingPosition="start"
-                  // disabled={!formCompleted} // Disable the button if the form is not completed
                   sx={{
                     textTransform: "capitalize",
                   }}

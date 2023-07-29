@@ -32,7 +32,6 @@ const PreLoader = () => {
         <Button
           disableElevation
           variant="contained"
-          color="secondary"
           sx={{
             borderRadius: "6px",
             boxShadow: "none",
@@ -51,7 +50,7 @@ const PreLoader = () => {
               letterSpacing: -2,
               fontWeight: "bold",
               fontSize: logoFontSize,
-              color: theme.palette.primary.main,
+              color: "#ffff",
             }}
           >
             SA

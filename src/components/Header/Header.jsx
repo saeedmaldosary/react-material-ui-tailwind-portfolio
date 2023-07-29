@@ -70,7 +70,6 @@ function Header({ change }) {
         position: "sticky",
         top: 0,
       }}
-      color="primary"
       position="static"
     >
       <Container>
@@ -103,8 +102,8 @@ function Header({ change }) {
                 <Typography
                   variant="body1"
                   component="span"
-                  color="primary"
                   sx={{
+                    color: "#ffff",
                     fontWeight: "bold",
                   }}
                 >
@@ -136,7 +135,6 @@ function Header({ change }) {
                   onClick={handleCloseNavMenu}
                   sx={{
                     my: 2,
-                    color: "secondary.contrastText",
                     display: "block",
                     fontWeight: 600,
                     fontSize: "16px",
@@ -169,7 +167,6 @@ function Header({ change }) {
             <Link to="letsTalk" smooth={true} offset={100} duration={500}>
               <Button
                 variant="outlined"
-                color="secondary"
                 size={letsTalkButtonSize}
                 sx={{
                   textTransform: "capitalize",
@@ -205,7 +202,6 @@ function Header({ change }) {
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               sx={{ p: 0, ml: 1 }}
-              color="secondary"
             >
               <MenuIcon sx={{ color: theme.palette.primary.action }} />
             </IconButton>
@@ -236,7 +232,7 @@ function Header({ change }) {
                   duration={500}
                 >
                   <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-                    <Typography sx={{ fontSize: "14px", fontWeight: "bold" }}>
+                    <Typography sx={{ fontSize: "14px" }}>
                       {page.name}
                     </Typography>
                   </MenuItem>
