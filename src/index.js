@@ -11,37 +11,114 @@ const AppWrapper = () => {
   const isDarkMode = darkMode;
   const colorsMode = isDarkMode ? "dark" : "light";
 
+  const palette = {
+    color1: {
+      value: "#ffffff",
+    },
+    color2: {
+      value: "#322653",
+    },
+    color3: {
+      value: "#8873ef",
+    },
+  };
+
   const colors = {
-    background: { light: "#ffffff", dark: "#2d1b74" },
-    text: { light: "#2d1b74", dark: "#ffffff" },
-    main: { light: "#8873ef", dark: "#8873ef" },
-    action: { light: "#8873ef", dark: "#ffffff" },
-    mdScreenMenu: { light: "#2d1b74", dark: "#ffffff" },
-    xsScreenMenu: { light: "#2d1b74", dark: "#2d1b74" },
-    cardBackground: { light: "#8873ef", dark: "#8873ef" },
-    cardBorder: { light: "#8873ef", dark: "#8873ef" },
-    boxBackground: { light: "#8873ef", dark: "#8873ef" },
-    avatarBackground: { light: "#8873ef", dark: "#8873ef" },
-    carouselActive: { light: "#2d1b74", dark: "#8873ef" },
-    carouselInactive: { light: "#8873ef", dark: "#b8abf5" },
-    buttonHover: { light: "#2d1b74", dark: "#ffffff" },
-    buttonHoverText: { light: "#ffffff", dark: "#2d1b74" },
-    containedButton: { light: "#8873ef", dark: "#8873ef" },
+    background: {
+      light: palette.color1.value,
+      dark: palette.color2.value,
+    },
+    text: { light: palette.color2.value, dark: palette.color1.value },
+    main: { light: palette.color3.value, dark: palette.color3.value },
+    action: { light: palette.color3.value, dark: palette.color1.value },
+    mdScreenMenu: {
+      light: palette.color2.value,
+      dark: palette.color1.value,
+    },
+    xsScreenMenu: {
+      light: palette.color2.value,
+      dark: palette.color2.value,
+    },
+    cardBackground: {
+      light: palette.color3.value,
+      dark: palette.color3.value,
+    },
+    cardBorder: {
+      light: palette.color3.value,
+      dark: palette.color3.value,
+    },
+    boxBackground: {
+      light: palette.color3.value,
+      dark: palette.color3.value,
+    },
+    avatarBackground: {
+      light: palette.color3.value,
+      dark: palette.color3.value,
+    },
+    carouselActive: {
+      light: palette.color3.value,
+      dark: palette.color3.value,
+    },
+    carouselInactive: {
+      light: palette.color3.value + "80",
+      dark: palette.color3.value + "80",
+    },
+    buttonHover: {
+      light: palette.color2.value,
+      dark: palette.color1.value,
+    },
+    buttonHoverText: {
+      light: palette.color1.value,
+      dark: palette.color2.value,
+    },
+    containedButton: {
+      light: palette.color3.value,
+      dark: palette.color3.value,
+    },
+    containedButtonText: {
+      light: palette.color1.value,
+      dark: palette.color1.value,
+    },
     outlinedButton: {
-      light: "rgba(136, 115, 239, 0.5)",
-      dark: "rgba(255, 255, 255, 0.5)",
+      light: palette.color3.value + "80",
+      dark: palette.color3.value + "80",
     },
     outlinedButtonText: {
-      light: "#8873ef",
-      dark: "#ffffff",
+      light: palette.color3.value,
+      dark: palette.color1.value,
     },
-    outlinedButtonHover: { light: "#2d1b74", dark: "#ffffff" },
-    outlinedButtonBorderHover: { light: "#8873ef", dark: "#8873ef" },
-    outlinedButtonHoverText: { light: "#ffffff", dark: "#2d1b74" },
-    loadingButton: { light: "#ffffff", dark: "#2d1b74" },
-    loadingButtonText: { light: "#8873ef", dark: "#ffffff" },
-    loadingButtonHover: { light: "#2d1b74", dark: "#FFFFFF" },
-    loadingButtonHoverText: { light: "#FFFFFF", dark: "#2d1b74" },
+    outlinedButtonHover: {
+      light: palette.color2.value,
+      dark: palette.color1.value,
+    },
+    outlinedButtonBorderHover: {
+      light: palette.color3.value,
+      dark: palette.color3.value,
+    },
+    outlinedButtonHoverText: {
+      light: palette.color1.value,
+      dark: palette.color2.value,
+    },
+    loadingButton: {
+      light: palette.color1.value,
+      dark: palette.color1.value,
+    },
+    loadingButtonText: {
+      light: palette.color2.value,
+      dark: palette.color2.value,
+    },
+    loadingButtonHover: {
+      light: palette.color2.value,
+      dark: palette.color2.value,
+    },
+    loadingButtonHoverText: {
+      light: palette.color1.value,
+      dark: palette.color1.value,
+    },
+    textField: {
+      light: palette.color1.value,
+      dark: palette.color1.value,
+    },
   };
 
   const theme = createTheme({
@@ -83,6 +160,7 @@ const AppWrapper = () => {
       MuiButton: {
         styleOverrides: {
           root: {
+            color: colors.mdScreenMenu[colorsMode],
             "&:hover": {
               backgroundColor: colors.buttonHover[colorsMode],
               color: colors.buttonHoverText[colorsMode],
@@ -90,7 +168,7 @@ const AppWrapper = () => {
           },
           contained: {
             backgroundColor: colors.containedButton[colorsMode],
-            color: "#ffffff",
+            color: colors.containedButtonText[colorsMode],
             "&:hover": {
               backgroundColor: colors.buttonHover[colorsMode],
               color: colors.buttonHoverText[colorsMode],
@@ -142,11 +220,13 @@ const AppWrapper = () => {
         action: colors.action[colorsMode],
       },
       secondary: {
-        main: "#FFC0CB",
-        contrastText: colors.mdScreenMenu[colorsMode],
+        main: palette.color3.value,
       },
       box: {
         main: colors.boxBackground[colorsMode],
+      },
+      textField: {
+        main: colors.textField[colorsMode],
       },
     },
   });
