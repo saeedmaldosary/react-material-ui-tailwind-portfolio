@@ -29,7 +29,6 @@ const AppWrapper = () => {
       dark: palette.color2.value,
     },
     text: { light: palette.color2.value, dark: palette.color1.value },
-    main: { light: palette.color3.value, dark: palette.color3.value },
     action: { light: palette.color3.value, dark: palette.color1.value },
     mdScreenMenu: {
       light: palette.color2.value,
@@ -81,7 +80,7 @@ const AppWrapper = () => {
     },
     outlinedButton: {
       light: palette.color3.value + "80",
-      dark: palette.color3.value + "80",
+      dark: palette.color1.value + "80",
     },
     outlinedButtonText: {
       light: palette.color3.value,
