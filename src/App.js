@@ -8,7 +8,7 @@ import Fade from "react-reveal/Fade";
 import { useEffect, useState } from "react";
 import "./App.css";
 
-function App({ change }) {
+function App({ change, setCurrentLanguage, currentLanguage }) {
   const duration = 2000;
 
   const [isLoading, setIsLoading] = useState(true);
@@ -26,7 +26,11 @@ function App({ change }) {
       ) : (
         <>
           <Fade duration={duration}>
-            <Header change={change} />
+            <Header
+              change={change}
+              setCurrentLanguage={setCurrentLanguage} // Pass down to Header
+              currentLanguage={currentLanguage} // Pass down to Header
+            />
           </Fade>
           <Fade duration={duration}>
             <Hero />

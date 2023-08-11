@@ -10,6 +10,7 @@ import palette from "./assets/colors/palette.js";
 
 const AppWrapper = () => {
   const [darkMode, setDarkMode] = useState(false);
+  const [currentLanguage, setCurrentLanguage] = useState("en");
 
   const isDarkMode = darkMode;
   const colorsMode = isDarkMode ? "dark" : "light";
@@ -17,7 +18,7 @@ const AppWrapper = () => {
   const theme = createTheme({
     typography: {
       allVariants: {
-        fontFamily: "Urbanist",
+        fontFamily: currentLanguage === "ar" ? "Vazirmatn" : "Urbanist",
         color: colors.text[colorsMode],
       },
     },
@@ -128,7 +129,11 @@ const AppWrapper = () => {
     <React.Fragment>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <App change={() => setDarkMode(!darkMode)} />
+        <App
+          change={() => setDarkMode(!darkMode)}
+          setCurrentLanguage={setCurrentLanguage}
+          currentLanguage={currentLanguage}
+        />
       </ThemeProvider>
     </React.Fragment>
   );

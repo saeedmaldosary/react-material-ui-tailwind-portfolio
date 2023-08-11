@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-scroll";
 import { useTranslation } from "react-i18next";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -40,10 +40,10 @@ const pages = [
   },
 ];
 
-function Header({ change }) {
+function Header({ change, setCurrentLanguage, currentLanguage }) {
   const theme = useTheme();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [isDarkMode, setIsDarkMode] = React.useState(false); // State to track dark mode
+  const [isDarkMode, setIsDarkMode] = React.useState(false);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -57,8 +57,6 @@ function Header({ change }) {
     setIsDarkMode((prevMode) => !prevMode);
     change(!isDarkMode);
   };
-
-  const [currentLanguage, setCurrentLanguage] = useState("en");
 
   const toggleLanguage = () => {
     const newLanguage = currentLanguage === "ar" ? "en" : "ar";
