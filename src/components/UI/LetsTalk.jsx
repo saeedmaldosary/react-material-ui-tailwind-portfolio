@@ -225,7 +225,6 @@ const LetsTalk = () => {
                 inputProps={{
                   maxLength: 500,
                   style: { color: "#FFFFFF" },
-                  inputProps: { style: { color: "#fff" } },
                 }}
                 sx={{
                   marginBottom: "1rem",

@@ -129,9 +129,9 @@ function Header({ change }) {
               gap: 3,
             }}
           >
-            {pages.map((page) => (
+            {pages.map((page, index) => (
               <Link
-                key={page.name}
+                key={index}
                 to={page.href}
                 smooth={true}
                 offset={page.offsetMD}
@@ -217,9 +217,9 @@ function Header({ change }) {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
+              {pages.map((page, index) => (
                 <Link
-                  key={page.name}
+                  key={index}
                   to={page.href}
                   smooth={true}
                   offset={page.offsetXS}
