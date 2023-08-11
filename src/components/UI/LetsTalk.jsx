@@ -9,6 +9,7 @@ import {
   Grid,
   Alert,
 } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import { LoadingButton } from "@mui/lab";
 import emailjs from "emailjs-com";
 import {
@@ -18,6 +19,7 @@ import {
 } from "@mui/icons-material";
 
 const LetsTalk = () => {
+  const [t] = useTranslation();
   const theme = useTheme();
   const form = useRef();
   const [loading, setLoading] = useState(false);
@@ -30,7 +32,6 @@ const LetsTalk = () => {
     e.preventDefault();
 
     if (!formCompleted) {
-      // If form is not completed, show fill message
       setShowFillMessage(true);
       return;
     }
@@ -57,7 +58,6 @@ const LetsTalk = () => {
   };
 
   const handleChange = () => {
-    // Check if all form fields have values
     const formData = new FormData(form.current);
     const isFormCompleted = [...formData.values()].every(
       (value) => value.trim() !== ""
@@ -82,7 +82,7 @@ const LetsTalk = () => {
         onClose={handleClose}
       >
         <Alert onClose={handleClose} severity="success" sx={{ width: "80%" }}>
-          Message sent successfully!
+          {t("messageSent")}
         </Alert>
       </Snackbar>
       <Snackbar
@@ -92,7 +92,7 @@ const LetsTalk = () => {
         onClose={handleClose}
       >
         <Alert onClose={handleClose} severity="error" sx={{ width: "80%" }}>
-          Message failed to send.
+          {t("messageFailed")}
         </Alert>
       </Snackbar>
       <Grid container>
@@ -116,13 +116,13 @@ const LetsTalk = () => {
               }}
               variant="body1"
             >
-              Let's Talk
+              {t("letsTalkTitle")}
             </Typography>
             <Typography sx={{ mb: 4, ml: 4, maxWidth: 300 }} variant="body1">
-              Reach me out. I can't wait to hear from you! 🤩
+              {t("letsTalkBody")}
             </Typography>
             <Typography sx={{ mb: 4 }} variant="body1" gutterBottom>
-              Contact me:
+              {t("contactMe")}
               <a
                 href="mailto:Saeedmaldosary@gmail.com"
                 target="_blank"
@@ -182,12 +182,12 @@ const LetsTalk = () => {
                 fontSize: { xs: "20px", md: "22px", sm: "18px" },
               }}
             >
-              Send me a message 🚀
+              {t("formTitle")}
             </Typography>
             <form ref={form} onSubmit={sendEmail} onChange={handleChange}>
               <TextField
                 focused
-                label="Name"
+                label={t("name")}
                 color="textField"
                 variant="filled"
                 name="user_name"
@@ -198,7 +198,7 @@ const LetsTalk = () => {
                 }}
               />
               <TextField
-                label="Email"
+                label={t("email")}
                 color="textField"
                 focused
                 variant="filled"
@@ -214,7 +214,7 @@ const LetsTalk = () => {
                 }}
               />
               <TextField
-                label="Message"
+                label={t("message")}
                 focused
                 variant="filled"
                 color="textField"
@@ -249,7 +249,7 @@ const LetsTalk = () => {
                     textTransform: "capitalize",
                   }}
                 >
-                  Send
+                  {t("sendButton")}
                 </LoadingButton>
               </Box>
             </form>
@@ -264,7 +264,7 @@ const LetsTalk = () => {
                   onClose={() => setShowFillMessage(false)}
                   severity="warning"
                 >
-                  Please fill in all the fields.
+                  {t("fillForm")}
                 </Alert>
               </Snackbar>
             )}

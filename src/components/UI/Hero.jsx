@@ -2,11 +2,13 @@ import React, { useEffect } from "react";
 import { Container, Grid, Typography, Button, Card } from "@mui/material";
 import { GitHub, LinkedIn, ArrowCircleDown } from "@mui/icons-material";
 import { Typewriter } from "react-simple-typewriter";
+import { useTranslation } from "react-i18next";
 import saeedImage from "../../assets/images/Saeed.png";
 import saeedImageW20 from "../../assets/images/Saeed-w20.png";
 import "./Hero.css";
 
 const Hero = () => {
+  const [t] = useTranslation();
   useEffect(() => {
     const blurDivs = document.querySelectorAll(".blur-load");
     blurDivs.forEach((div) => {
@@ -31,7 +33,7 @@ const Hero = () => {
         <Grid item md={8} sm={7} xs={12}>
           <div>
             <Typography sx={{ fontSize: { xs: "22px", md: "24px" } }}>
-              Hello,
+              {t("hello")}
             </Typography>
             <Typography
               sx={{
@@ -41,7 +43,7 @@ const Hero = () => {
               }}
               variant="body1"
             >
-              I'm Saeed Aldosary
+              {t("heroName")}
             </Typography>
             <Typography
               sx={{
@@ -65,6 +67,7 @@ const Hero = () => {
             <a
               href="https://drive.google.com/file/d/1ATLhgErIMLo7KlIoAVgJGGbOORyH6k9j/view?usp=sharing"
               target="_blank"
+              rel="noreferrer"
             >
               <Button
                 disableElevation
@@ -77,18 +80,17 @@ const Hero = () => {
                 variant="contained"
                 startIcon={<ArrowCircleDown />}
               >
-                Resume
+                {t("resumeButton")}
               </Button>
             </a>
             <Typography
               sx={{ mb: 4, ml: 4, maxWidth: { md: 500, sm: 350 } }}
               variant="body1"
             >
-              Application developer in-depth knowledge of software application
-              development as well as proficiency in providing solutions.
+              {t("aboutBody")}
             </Typography>
             <Typography sx={{ mb: 4 }} variant="body1" gutterBottom>
-              Follow me:
+              {t("followMe")}
               <a
                 href="https://github.com/saeedmaldosary"
                 target="_blank"
@@ -140,7 +142,7 @@ const Hero = () => {
                   marginTop: "90px",
                 }}
                 src={saeedImage}
-                alt="Transparent Image"
+                alt="Transparent"
               />
             </div>
           </Card>

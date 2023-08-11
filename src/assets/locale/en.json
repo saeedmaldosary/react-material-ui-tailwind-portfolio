@@ -1,0 +1,22 @@
+{
+  "hello": "Hello,",
+  "heroName": "I'm Saeed Aldosary",
+  "positions": ["Software Engineer", "Full Stack Developer"],
+  "resumeButton": "Resume",
+  "aboutTitle": "About",
+  "aboutBody": "Application developer in-depth knowledge of software application development as well as proficiency in providing solutions.",
+  "followMe": "Follow me:",
+  "skillsTitle": "Skills",
+  "certificationsTitle": "Certifications",
+  "letsTalkTitle": "Let's Talk",
+  "letsTalkBody": " Reach me out. I can't wait to hear from you! 🤩",
+  "contactMe": "Contact Me:",
+  "formTitle": "Send me a message 🚀",
+  "name": "Name",
+  "email": "Email",
+  "message": "Message",
+  "sendButton": "Send",
+  "fillForm": "Please fill in all the fields.",
+  "messageSent": " Message sent successfully!",
+  "messageFailed": "Message failed to send."
+}

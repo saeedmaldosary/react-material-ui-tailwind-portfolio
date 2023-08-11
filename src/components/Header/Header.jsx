@@ -1,6 +1,8 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { Link } from "react-scroll";
+import { useTranslation } from "react-i18next";
 import MenuIcon from "@mui/icons-material/Menu";
+
 import {
   AppBar,
   Box,
@@ -12,27 +14,26 @@ import {
   Avatar,
   Button,
   MenuItem,
-  useMediaQuery,
   useTheme,
 } from "@mui/material";
 
-import { ChatOutlined, LightMode, DarkMode } from "@mui/icons-material";
+import { LightMode, Brightness2, Public } from "@mui/icons-material";
 
 const pages = [
   {
-    name: "About",
+    title: "aboutTitle",
     href: "about",
     offsetMD: -100,
     offsetXS: -100,
   },
   {
-    name: "Skills",
+    title: "skillsTitle",
     href: "skills",
     offsetMD: -100,
     offsetXS: -80,
   },
   {
-    name: "Certifications",
+    title: "certificationsTitle",
     href: "certifications",
     offsetMD: 0,
     offsetXS: -80,
@@ -44,10 +45,6 @@ function Header({ change }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [isDarkMode, setIsDarkMode] = React.useState(false); // State to track dark mode
 
-  const isMdScreen = useMediaQuery(theme.breakpoints.up("md"));
-  const isSmScreen = useMediaQuery(theme.breakpoints.up("sm"));
-  const letsTalkButtonSize = isMdScreen || isSmScreen ? "medium" : "small";
-
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -58,8 +55,18 @@ function Header({ change }) {
 
   const handleToggleDarkMode = () => {
     setIsDarkMode((prevMode) => !prevMode);
-    change(!isDarkMode); // Notify the parent component about the dark mode change
+    change(!isDarkMode);
   };
+
+  const [currentLanguage, setCurrentLanguage] = useState("en");
+
+  const toggleLanguage = () => {
+    const newLanguage = currentLanguage === "ar" ? "en" : "ar";
+    setCurrentLanguage(newLanguage);
+    i18n.changeLanguage(newLanguage);
+  };
+
+  const [t, i18n] = useTranslation();
 
   return (
     <AppBar
@@ -141,7 +148,7 @@ function Header({ change }) {
                     textTransform: "capitalize",
                   }}
                 >
-                  {page.name}
+                  {t(page.title)}
                 </Button>
               </Link>
             ))}
@@ -156,28 +163,15 @@ function Header({ change }) {
             }}
           >
             {isDarkMode ? (
-              <DarkMode sx={{ color: theme.palette.primary.action }} />
+              <Brightness2 sx={{ color: theme.palette.primary.action }} />
             ) : (
               <LightMode sx={{ color: theme.palette.primary.action }} />
             )}
           </Box>
 
-          {/* Hire me button */}
-          <Box>
-            <Link to="letsTalk" smooth={true} offset={100} duration={500}>
-              <Button
-                variant="outlined"
-                size={letsTalkButtonSize}
-                sx={{
-                  textTransform: "capitalize",
-                }}
-                startIcon={<ChatOutlined />}
-              >
-                Let's Talk
-              </Button>
-            </Link>
+          <Box sx={{ cursor: "pointer" }} onClick={toggleLanguage}>
+            <Public sx={{ color: theme.palette.primary.action }} />
           </Box>
-
           <Box
             onClick={handleToggleDarkMode}
             sx={{
@@ -187,7 +181,7 @@ function Header({ change }) {
             }}
           >
             {isDarkMode ? (
-              <DarkMode sx={{ color: theme.palette.primary.action }} />
+              <Brightness2 sx={{ color: theme.palette.primary.action }} />
             ) : (
               <LightMode sx={{ color: theme.palette.primary.action }} />
             )}
@@ -233,7 +227,7 @@ function Header({ change }) {
                 >
                   <MenuItem key={page.name} onClick={handleCloseNavMenu}>
                     <Typography sx={{ fontSize: "14px" }}>
-                      {page.name}
+                      {t(page.title)}
                     </Typography>
                   </MenuItem>
                 </Link>
