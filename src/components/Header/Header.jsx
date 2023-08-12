@@ -109,6 +109,7 @@ function Header({ change, setCurrentLanguage, currentLanguage }) {
                   component="span"
                   sx={{
                     color: "#ffff",
+                    fontFamily: "Urbanist",
                     fontWeight: "bold",
                   }}
                 >
