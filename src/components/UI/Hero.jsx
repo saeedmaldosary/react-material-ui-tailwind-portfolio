@@ -12,9 +12,15 @@ const Hero = () => {
   const theme = useTheme();
   const direction = theme.direction === "rtl";
   const resumeButtonStyle = direction ? { ml: 1 } : { mr: 1 };
+  const aboutBodyStyle = {
+    mb: 4,
+    maxWidth: { md: 500, sm: 350 },
+    ...(direction ? { mr: 4 } : { ml: 4 }),
+  };
   const typewriterStyle = {
     fontWeight: "bold",
     mb: 3,
+    letterSpacing: { xs: -1 },
     fontSize: { xs: "28px", md: "32px" },
     ...(direction ? { direction: "ltr", textAlign: "right" } : {}),
   };
@@ -51,6 +57,7 @@ const Hero = () => {
                 mb: 0,
                 fontWeight: "bold",
                 fontSize: { xs: "28px", md: "32px" },
+                letterSpacing: { xs: -1 },
               }}
               variant="body1"
             >
@@ -87,10 +94,7 @@ const Hero = () => {
                 {t("resumeButton")}
               </Button>
             </a>
-            <Typography
-              sx={{ mb: 4, mx: 4, maxWidth: { md: 500, sm: 350 } }}
-              variant="body1"
-            >
+            <Typography sx={aboutBodyStyle} variant="body1">
               {t("aboutBody")}
             </Typography>
             <Typography sx={{ mb: 4 }} variant="body1" gutterBottom>
