@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import "./i18n";
@@ -12,10 +13,17 @@ const AppWrapper = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [currentLanguage, setCurrentLanguage] = useState("en");
 
+  // useEffect(() => {
+  //   console.log("Current Language: ", currentLanguage);
+  // }, [currentLanguage]);
+
   const isDarkMode = darkMode;
   const colorsMode = isDarkMode ? "dark" : "light";
 
+  const direction = currentLanguage === "ar" ? "rtl" : "ltr";
+
   const theme = createTheme({
+    direction: direction,
     typography: {
       allVariants: {
         fontFamily: currentLanguage === "ar" ? "Vazirmatn" : "Urbanist",
@@ -30,18 +38,6 @@ const AppWrapper = () => {
           },
         },
       },
-      MuiLoadingButton: {
-        styleOverrides: {
-          root: {
-            backgroundColor: colors.loadingButton[colorsMode],
-            color: colors.loadingButtonText[colorsMode],
-            "&:hover": {
-              backgroundColor: colors.loadingButtonHover[colorsMode],
-              color: colors.loadingButtonHoverText[colorsMode],
-            },
-          },
-        },
-      },
       MuiMenuItem: {
         styleOverrides: {
           root: {
@@ -51,9 +47,20 @@ const AppWrapper = () => {
           },
         },
       },
+      MuiCircularProgress: {
+        styleOverrides: {
+          root: {
+            color: colors.circularProgress[colorsMode],
+          },
+        },
+      },
       MuiButton: {
         styleOverrides: {
           root: {
+            "&.sendButton": {
+              backgroundColor: colors.sendButton[colorsMode],
+              color: colors.sendButtonText[colorsMode],
+            },
             color: colors.mdScreenMenu[colorsMode],
             "&:hover": {
               backgroundColor: colors.buttonHover[colorsMode],
@@ -127,14 +134,16 @@ const AppWrapper = () => {
 
   return (
     <React.Fragment>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <App
-          change={() => setDarkMode(!darkMode)}
-          setCurrentLanguage={setCurrentLanguage}
-          currentLanguage={currentLanguage}
-        />
-      </ThemeProvider>
+      <div dir={direction}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <App
+            change={() => setDarkMode(!darkMode)}
+            setCurrentLanguage={setCurrentLanguage}
+            currentLanguage={currentLanguage}
+          />
+        </ThemeProvider>
+      </div>
     </React.Fragment>
   );
 };

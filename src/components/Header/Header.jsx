@@ -157,7 +157,7 @@ function Header({ change, setCurrentLanguage, currentLanguage }) {
             onClick={handleToggleDarkMode}
             sx={{
               display: { xs: "none", md: "flex" },
-              mr: 1,
+              mx: 1,
               cursor: "pointer",
             }}
           >
@@ -175,7 +175,7 @@ function Header({ change, setCurrentLanguage, currentLanguage }) {
             onClick={handleToggleDarkMode}
             sx={{
               display: { xs: "flex", md: "none" },
-              ml: 1,
+              mx: 1,
               cursor: "pointer",
             }}
           >

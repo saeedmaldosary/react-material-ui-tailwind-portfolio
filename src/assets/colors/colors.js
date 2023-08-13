@@ -75,21 +75,17 @@ const colors = {
     light: palette.color1.value,
     dark: palette.color2.value,
   },
-  loadingButton: {
+  sendButton: {
     light: palette.color1.value,
     dark: palette.color1.value,
   },
-  loadingButtonText: {
+  sendButtonText: {
     light: palette.color2.value,
     dark: palette.color2.value,
   },
-  loadingButtonHover: {
+  circularProgress: {
     light: palette.color2.value,
     dark: palette.color2.value,
-  },
-  loadingButtonHoverText: {
-    light: palette.color1.value,
-    dark: palette.color1.value,
   },
   textField: {
     light: palette.color1.value,

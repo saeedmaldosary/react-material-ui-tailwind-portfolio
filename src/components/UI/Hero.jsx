@@ -2,12 +2,23 @@ import React, { useEffect } from "react";
 import { Container, Grid, Typography, Button, Card } from "@mui/material";
 import { GitHub, LinkedIn, ArrowCircleDown } from "@mui/icons-material";
 import { Typewriter } from "react-simple-typewriter";
+import { useTheme } from "@mui/material/styles";
 import { useTranslation } from "react-i18next";
 import saeedImage from "../../assets/images/Saeed.png";
 import saeedImageW20 from "../../assets/images/Saeed-w20.png";
 import "./Hero.css";
 
 const Hero = () => {
+  const theme = useTheme();
+  const direction = theme.direction === "rtl";
+  const resumeButtonStyle = direction ? { ml: 1 } : { mr: 1 };
+  const typewriterStyle = {
+    fontWeight: "bold",
+    mb: 3,
+    fontSize: { xs: "28px", md: "32px" },
+    ...(direction ? { direction: "ltr", textAlign: "right" } : {}),
+  };
+
   const [t] = useTranslation();
   useEffect(() => {
     const blurDivs = document.querySelectorAll(".blur-load");
@@ -45,14 +56,7 @@ const Hero = () => {
             >
               {t("heroName")}
             </Typography>
-            <Typography
-              sx={{
-                fontWeight: "bold",
-                mb: 3,
-                fontSize: { xs: "28px", md: "32px" },
-              }}
-              variant="body1"
-            >
+            <Typography sx={typewriterStyle} variant="body1">
               <Typewriter
                 words={[" Software Engineer", "Full Stack Developer"]}
                 loop={false}
@@ -78,13 +82,13 @@ const Hero = () => {
                   textTransform: "capitalize",
                 }}
                 variant="contained"
-                startIcon={<ArrowCircleDown />}
               >
+                <ArrowCircleDown sx={resumeButtonStyle} />
                 {t("resumeButton")}
               </Button>
             </a>
             <Typography
-              sx={{ mb: 4, ml: 4, maxWidth: { md: 500, sm: 350 } }}
+              sx={{ mb: 4, mx: 4, maxWidth: { md: 500, sm: 350 } }}
               variant="body1"
             >
               {t("aboutBody")}

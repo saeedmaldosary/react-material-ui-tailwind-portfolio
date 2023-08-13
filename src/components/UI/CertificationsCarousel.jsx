@@ -92,7 +92,7 @@ function CertificationsCard({ certificationsData }) {
                     </Card>
                   </Grid>
                   <Grid key={item.id} item xs={12} md={12} sm={12}>
-                    <Box sx={{ px: "20px" }}>
+                    <Box sx={{ px: "20px", direction: "ltr" }}>
                       <Typography
                         sx={{ color: "#ffff", fontWeight: 600 }}
                         variant="body1"
