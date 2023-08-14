@@ -38,6 +38,12 @@ const pages = [
     offsetMD: 0,
     offsetXS: -80,
   },
+  {
+    title: "letsTalkTitle",
+    href: "letsTalk",
+    offsetMD: 0,
+    offsetXS: -80,
+  },
 ];
 
 function Header({ change, setCurrentLanguage, currentLanguage }) {

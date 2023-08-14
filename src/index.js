@@ -60,6 +60,10 @@ const AppWrapper = () => {
             "&.sendButton": {
               backgroundColor: colors.sendButton[colorsMode],
               color: colors.sendButtonText[colorsMode],
+              "&:hover": {
+                backgroundColor: colors.sendButton[colorsMode],
+                color: colors.sendButtonText[colorsMode],
+              },
             },
             color: colors.mdScreenMenu[colorsMode],
             "&:hover": {
