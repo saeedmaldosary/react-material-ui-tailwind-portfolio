@@ -139,7 +139,7 @@ const LetsTalk = () => {
                 fontWeight: "bold",
                 mb: 1,
                 fontSize: { xs: "28px", md: "32px" },
-                letterSpacing: { xs: -1 },
+                letterSpacing: { xs: -1, md: 0 },
               }}
               variant="body1"
             >
@@ -206,7 +206,7 @@ const LetsTalk = () => {
                 color: "#ffff",
                 mb: 2,
                 fontWeight: "bold",
-                letterSpacing: { xs: -1 },
+                letterSpacing: { xs: -1, md: 0 },
                 fontSize: { xs: "20px", md: "22px", sm: "18px" },
               }}
             >

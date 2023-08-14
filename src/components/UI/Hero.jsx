@@ -14,13 +14,14 @@ const Hero = () => {
   const resumeButtonStyle = direction ? { ml: 1 } : { mr: 1 };
   const aboutBodyStyle = {
     mb: 4,
-    maxWidth: { md: 500, sm: 350 },
-    ...(direction ? { mr: 4 } : { ml: 4 }),
+    ...(direction
+      ? { mr: 4, maxWidth: { md: 300, sm: 350 } }
+      : { ml: 4, maxWidth: { md: 500, sm: 350 } }),
   };
   const typewriterStyle = {
     fontWeight: "bold",
     mb: 3,
-    letterSpacing: { xs: -1 },
+    letterSpacing: { xs: -1, md: 0 },
     fontSize: { xs: "28px", md: "32px" },
     ...(direction ? { direction: "ltr", textAlign: "right" } : {}),
   };
@@ -57,7 +58,7 @@ const Hero = () => {
                 mb: 0,
                 fontWeight: "bold",
                 fontSize: { xs: "28px", md: "32px" },
-                letterSpacing: { xs: -1 },
+                letterSpacing: { xs: -1, md: 0 },
               }}
               variant="body1"
             >
